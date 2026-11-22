@@ -6,7 +6,10 @@ Live at https://yeochoi.github.io/sift/. Open it in Safari and choose Add to Hom
 
 ## How it works
 
-1. **Every Monday, the same for everyone.** `.github/workflows/weekly.yml` runs `scripts/weekly.mjs`. It reads the sources in `data/sources.json`, keeps posts from the last 8 days, and sends them to Claude. Claude merges the same story from several sources, writes a three point summary and a why line per topic, and tags each one. The pool goes to `data/latest.json` and `data/weeks/<week>.json`.
+1. **Every Monday, the same for everyone.** `.github/workflows/weekly.yml` runs `scripts/weekly.mjs`. It reads the sources in `data/sources.json` and keeps posts from the last 8 days. Then two cheap stages, both through the Batch API at half price.
+   - Sonnet reads a short part of every post, merges the same story from several sources, tags and scores each one, writes a one line gist and the briefing for the week.
+   - Haiku reads the whole article for the top ten and writes a summary good enough to skip the article.
+   The pool goes to `data/latest.json` and `data/weeks/<week>.json`, with the token use of each run in `usage`.
 2. **On the phone, per person.** `pick.js` scores the pool with your settings and picks five. The big story of the week first, then three from your topics, each from a different topic when it can, then one from outside your topics. No AI call happens in the app.
 
 Settings and read marks stay on the phone in local storage.
