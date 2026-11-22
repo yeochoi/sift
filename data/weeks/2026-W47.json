@@ -1,0 +1,796 @@
+{
+ "week": "2026-W47",
+ "created": "2026-11-22T15:22:17.582Z",
+ "model": "claude-sonnet-5-5",
+ "sample": false,
+ "sources": [
+  {
+   "id": "nng",
+   "name": "NN/g",
+   "feed": "https://www.nngroup.com/feed/rss/",
+   "found": 20,
+   "kept": 4,
+   "error": null
+  },
+  {
+   "id": "smashing",
+   "name": "Smashing Magazine",
+   "feed": "https://www.smashingmagazine.com/feed/",
+   "found": 40,
+   "kept": 2,
+   "error": null
+  },
+  {
+   "id": "uxcollective",
+   "name": "UX Collective",
+   "feed": "https://uxdesign.cc/feed",
+   "found": 10,
+   "kept": 10,
+   "error": null
+  },
+  {
+   "id": "lenny",
+   "name": "Lenny's Newsletter",
+   "feed": "https://www.lennysnewsletter.com/feed",
+   "found": 20,
+   "kept": 7,
+   "error": null
+  },
+  {
+   "id": "nielsen",
+   "name": "Jakob Nielsen",
+   "feed": "https://www.uxtigers.com/blog-feed.xml",
+   "found": 20,
+   "kept": 3,
+   "error": null
+  },
+  {
+   "id": "lukew",
+   "name": "Luke Wroblewski",
+   "feed": "https://www.lukew.com/ff/rss.xml",
+   "found": 15,
+   "kept": 2,
+   "error": null
+  },
+  {
+   "id": "pair",
+   "name": "Google PAIR",
+   "feed": "https://medium.com/feed/people-ai-research",
+   "found": 10,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "adobe",
+   "name": "Adobe Design",
+   "feed": "page https://adobe.design/",
+   "found": 1,
+   "kept": 1,
+   "error": null
+  },
+  {
+   "id": "hamel",
+   "name": "Hamel Husain",
+   "feed": "https://hamel.dev/index.xml",
+   "found": 20,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "skift",
+   "name": "Skift",
+   "feed": "https://skift.com/feed/",
+   "found": 10,
+   "kept": 10,
+   "error": null
+  },
+  {
+   "id": "lyssna",
+   "name": "Lyssna",
+   "feed": "page https://www.lyssna.com/blog/",
+   "found": 6,
+   "kept": 6,
+   "error": null
+  },
+  {
+   "id": "tldr-design",
+   "name": "TLDR Design",
+   "feed": "https://tldr.tech/api/rss/design",
+   "found": 20,
+   "kept": 5,
+   "error": null
+  },
+  {
+   "id": "tldr-ai",
+   "name": "TLDR AI",
+   "feed": "https://tldr.tech/api/rss/ai",
+   "found": 20,
+   "kept": 5,
+   "error": null
+  }
+ ],
+ "usage": {
+  "input_tokens": 22229,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "output_tokens": 7657,
+  "output_tokens_details": {
+   "thinking_tokens": 1387
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "items": [
+  {
+   "id": "01-can-ai-generate-good-designs-from-raw-us",
+   "title": "Can AI generate good designs from raw user data",
+   "url": "https://www.nngroup.com/articles/raw-data-vs-synthesized-data/",
+   "source": "NN/g",
+   "via": [
+    "nng"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "ai-prototyping",
+    "research"
+   ],
+   "kind": "know",
+   "summary": [
+    "NN/g gave an AI two design tasks, a rebooking form and a checkout flow.",
+    "Designs were better when the AI got synthesized findings and recommendations.",
+    "Raw user comments alone produced weaker interfaces, so synthesis still matters."
+   ],
+   "why": {
+    "ai-prototyping": "It shows that feeding AI prototype tools synthesized research gives better output than dumping raw feedback on them.",
+    "research": "It makes a concrete case that research synthesis remains valuable even when AI can read raw data.",
+    "general": "Good inputs still decide good AI-generated design, so keep doing the synthesis step."
+   },
+   "importance": 5,
+   "practical": 5,
+   "roles": [
+    "designer",
+    "researcher",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "02-qualitative-user-research-methods-overvi",
+   "title": "Qualitative user research methods overview",
+   "url": "https://www.nngroup.com/articles/qual-research-methods/",
+   "source": "NN/g",
+   "via": [
+    "nng"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "research"
+   ],
+   "kind": "try",
+   "summary": [
+    "Covers usability testing, user interviews, field studies and diary studies.",
+    "Estimates the rough relative cost and difficulty of each method.",
+    "Companion piece to NN/g's overview of quantitative methods."
+   ],
+   "why": {
+    "research": "A quick reference for picking the right qualitative method when you need to learn why users struggle.",
+    "general": "Useful for choosing a method before you plan your next study."
+   },
+   "importance": 3,
+   "practical": 5,
+   "roles": [
+    "researcher",
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "03-design-by-playground",
+   "title": "Design by playground",
+   "url": "https://www.lukew.com/ff/2172/design-by-playground",
+   "source": "Luke Wroblewski",
+   "via": [
+    "lukew"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "ai-prototyping",
+    "craft"
+   ],
+   "kind": "try",
+   "summary": [
+    "Designers now use AI coding agents to build small, disposable design tools.",
+    "Playgrounds let you tweak variables and states with real content and data.",
+    "Building one used to cost too much time, and now takes minutes."
+   ],
+   "why": {
+    "ai-prototyping": "It describes a practical way to explore edge cases, animation and states that static mockups hide.",
+    "craft": "Real data and adjustable controls surface long names, empty states and errors before developers flag them.",
+    "general": "A new habit worth trying for a single tricky design question."
+   },
+   "importance": 4,
+   "practical": 5,
+   "roles": [
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "04-prototypes-are-the-best-specification-es",
+   "title": "Prototypes are the best specification, especially with AI",
+   "url": "https://uxdesign.cc/prototypes-have-always-been-the-most-effective-specification-10162107b2ee",
+   "source": "UX Collective",
+   "via": [
+    "uxcollective"
+   ],
+   "published": "2026-11-22",
+   "topics": [
+    "ai-prototyping",
+    "product-strategy"
+   ],
+   "kind": "know",
+   "summary": [
+    "When building takes an afternoon, a working version can come before requirements.",
+    "Open questions in a spec often answer themselves once you can click it.",
+    "Designers, PMs and engineers can all build prototypes now, so teams must adapt."
+   ],
+   "why": {
+    "ai-prototyping": "It argues the spec now records what building settled instead of predicting it.",
+    "product-strategy": "It challenges the write requirements, sign off, then build sequence many teams still follow.",
+    "general": "Expect more working prototypes to show up before documents do."
+   },
+   "importance": 4,
+   "practical": 4,
+   "roles": [
+    "designer",
+    "pm",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "05-the-attack-of-the-giant-ai-design-slop-m",
+   "title": "The attack of the giant AI design slop monster",
+   "url": "https://uxdesign.cc/the-attack-of-the-giant-ai-design-slop-monster-a-survivors-guide-55f5918f78f4",
+   "source": "UX Collective",
+   "via": [
+    "uxcollective"
+   ],
+   "published": "2026-11-22",
+   "topics": [
+    "ai-interaction",
+    "craft"
+   ],
+   "kind": "know",
+   "summary": [
+    "Author expands a conference talk on how AI changed UX design in 2026.",
+    "In research, hallucinated quotes are gone and reports are easy with templates.",
+    "Human oversight and interpretation still matter, while AI design is no longer dismissable."
+   ],
+   "why": {
+    "ai-interaction": "A practitioner's candid view of how fast AI for design moved in one year.",
+    "craft": "It raises the quality question when AI-made design floods products.",
+    "general": "Useful perspective on where professional judgement still counts."
+   },
+   "importance": 3,
+   "practical": 3,
+   "roles": [
+    "designer",
+    "researcher",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "06-meta-s-muse-launch-with-mona-sarantakos",
+   "title": "Meta's Muse launch with Mona Sarantakos",
+   "url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
+   "source": "Lenny's Newsletter",
+   "via": [
+    "lenny"
+   ],
+   "published": "2026-11-15",
+   "topics": [
+    "growth",
+    "ai-interaction"
+   ],
+   "kind": "know",
+   "summary": [
+    "Muse is the number one App Store app and a fast-growing AI consumer product.",
+    "The team waited seven months to launch and uses agent swarms for insights.",
+    "The episode covers two levers that move activation for an AI agent."
+   ],
+   "why": {
+    "growth": "It looks at what moves activation for an AI agent product at big consumer scale.",
+    "ai-interaction": "It shows how a team shaped an agent product, from avatar to unexpected use cases.",
+    "general": "A rare inside look at a major AI consumer launch."
+   },
+   "importance": 4,
+   "practical": 3,
+   "roles": [
+    "pm",
+    "lead",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "07-what-it-takes-to-be-a-great-pm-in-the-ai",
+   "title": "What it takes to be a great PM in the AI era",
+   "url": "https://www.lennysnewsletter.com/p/first-principles-what-it-takes-to",
+   "source": "Lenny's Newsletter",
+   "via": [
+    "lenny"
+   ],
+   "published": "2026-11-22",
+   "topics": [
+    "product-strategy",
+    "leadership"
+   ],
+   "kind": "know",
+   "summary": [
+    "Atlassian's head of AI and product craft says a PM's first job is a shared brain.",
+    "He describes three PM types, the artist, the scientist and the GM.",
+    "Atlassian is hiring more juniors than ever and PM roles are growing fast."
+   ],
+   "why": {
+    "product-strategy": "It offers a view on how PM work and hiring are changing as AI products spread.",
+    "leadership": "It covers common mistakes new PM managers make.",
+    "general": "Helpful for anyone working closely with PMs."
+   },
+   "importance": 3,
+   "practical": 3,
+   "roles": [
+    "pm",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "08-users-rubber-stamp-ai-permission-request",
+   "title": "Users rubber stamp AI permission requests",
+   "url": "https://www.uxtigers.com/post/ux-roundup-20261120",
+   "source": "Jakob Nielsen",
+   "via": [
+    "nielsen"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "trust",
+    "ai-interaction"
+   ],
+   "kind": "know",
+   "summary": [
+    "Users tend to approve AI permission requests without really reading them.",
+    "Nielsen suggests asking for permissions in context, one at a time.",
+    "The roundup also covers speed as good UX and using AI to prepare for conversations."
+   ],
+   "why": {
+    "trust": "A barrage of permission prompts trains people to click yes, which weakens real consent.",
+    "ai-interaction": "It points to a concrete pattern for agent permission design, asking at the moment of need.",
+    "general": "Worth checking how your agent asks for access."
+   },
+   "importance": 3,
+   "practical": 4,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "09-service-as-software-and-outcome-pricing",
+   "title": "Service as software and outcome pricing",
+   "url": "https://www.uxtigers.com/post/service-as-software",
+   "source": "Jakob Nielsen",
+   "via": [
+    "nielsen"
+   ],
+   "published": "2026-11-18",
+   "topics": [
+    "product-strategy",
+    "trust"
+   ],
+   "kind": "know",
+   "summary": [
+    "AI vendors now sell finished work and charge per outcome.",
+    "Outcome pricing moves the cost of failed work onto the seller.",
+    "Uncounted phantom resolutions stay the buyer's problem, so designing the meter is UX work."
+   ],
+   "why": {
+    "product-strategy": "Pricing per outcome changes what teams must measure and show to customers.",
+    "trust": "Phantom resolutions can erode confidence unless the meter is clear and auditable.",
+    "general": "Designing and auditing the meter becomes part of the job."
+   },
+   "importance": 3,
+   "practical": 3,
+   "roles": [
+    "pm",
+    "designer",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "10-crazy-agent-scale-lessons-from-companies",
+   "title": "Crazy Agent Scale lessons from companies all in on AI",
+   "url": "https://www.lukew.com/ff/2173/crazy-agent-scale-companies-all-in-on-ai",
+   "source": "Luke Wroblewski",
+   "via": [
+    "lukew"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "ai-interaction"
+   ],
+   "kind": "know",
+   "summary": [
+    "Notes from an event on pushing AI agents to their limits.",
+    "Keep specs outside the context window so agents can read and edit them.",
+    "Adversarial pairs, like a PM who only critiques, improve agent output."
+   ],
+   "why": {
+    "ai-interaction": "Concrete patterns for orchestrating many agents that designers of agent products can borrow.",
+    "general": "A look at how heavy agent users actually work."
+   },
+   "importance": 3,
+   "practical": 4,
+   "roles": [
+    "designer",
+    "pm",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "11-how-i-fight-token-fraud-as-a-solo-founde",
+   "title": "How I fight token fraud as a solo founder",
+   "url": "https://www.lennysnewsletter.com/p/how-i-fight-token-fraud-as-a-solo",
+   "source": "Lenny's Newsletter",
+   "via": [
+    "lenny"
+   ],
+   "published": "2026-11-16",
+   "topics": [
+    "product-strategy",
+    "growth"
+   ],
+   "kind": "know",
+   "summary": [
+    "The ChatPRD founder describes six abuse patterns that cost tens of thousands of dollars.",
+    "Fraudsters farmed free trials, resold promo codes and ran a custom MCP.",
+    "She ended free trials for good, since if you sell AI, you sell compute."
+   ],
+   "why": {
+    "product-strategy": "Free trials and support desks in AI products carry real compute cost and abuse risk.",
+    "growth": "It challenges the usual free trial growth tactic for AI products.",
+    "general": "Worth knowing before you plan AI onboarding."
+   },
+   "importance": 3,
+   "practical": 3,
+   "roles": [
+    "pm",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "12-send-the-firefighters-to-the-fires",
+   "title": "Send the firefighters to the fires",
+   "url": "https://uxdesign.cc/send-the-firefighters-to-the-fires-6cd7b1893ae7",
+   "source": "UX Collective",
+   "via": [
+    "uxcollective"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "craft",
+    "product-strategy"
+   ],
+   "kind": "try",
+   "summary": [
+    "If a user's job is fixing what's broken, show what's broken first.",
+    "Enterprise software often sorts for the data model, buyer demo or shipping team.",
+    "Start from the user's job, using Jobs to Be Done thinking."
+   ],
+   "why": {
+    "craft": "A clear principle for triage screens like compliance, invoices and tickets.",
+    "product-strategy": "It ties interface priority to the job users are actually hired to do.",
+    "general": "A good check for any list-heavy enterprise view."
+   },
+   "importance": 3,
+   "practical": 4,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "13-what-is-a-researcher-s-worth",
+   "title": "What is a researcher's worth",
+   "url": "https://uxdesign.cc/what-is-a-researchers-worth-ea14c95c6d12",
+   "source": "UX Collective",
+   "via": [
+    "uxcollective"
+   ],
+   "published": "2026-11-17",
+   "topics": [
+    "research",
+    "leadership"
+   ],
+   "kind": "know",
+   "summary": [
+    "Debate over research value is about more than AI replacing jobs.",
+    "Researchers face doubts about methods, representativeness and truthfulness of participants.",
+    "The author argues effortless AI makes human friction our scarcest asset."
+   ],
+   "why": {
+    "research": "It frames how to argue for research value as AI makes insight cheap to produce.",
+    "leadership": "Helps leads think about research maturity and how to defend the practice.",
+    "general": "A reflective read on the researcher's role."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "researcher",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "14-ai-sped-up-the-build-so-can-accessibilit",
+   "title": "AI sped up the build, so can accessibility testing keep up",
+   "url": "https://smashingmagazine.com/2026/11/ai-sped-up-build-how-can-accessibility-testing-keep-up/",
+   "source": "Smashing Magazine",
+   "via": [
+    "smashing"
+   ],
+   "published": "2026-11-17",
+   "topics": [
+    "accessibility",
+    "ai-quality"
+   ],
+   "kind": "know",
+   "summary": [
+    "A survey of 2,500 professionals found AI sped up design, planning and development.",
+    "Only 30 percent said AI sped up QA and testing.",
+    "WebAIM found detected errors per home page rose from 51 to 56.1."
+   ],
+   "why": {
+    "accessibility": "Faster builds without faster checks mean accessibility problems may pile up late.",
+    "ai-quality": "It shows validation lags behind generation in AI-assisted workflows.",
+    "general": "Think about where accessibility checks sit now. This is a sponsored article."
+   },
+   "importance": 3,
+   "practical": 3,
+   "roles": [
+    "designer",
+    "lead",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "15-sabre-wants-to-power-ai-travel-bookings",
+   "title": "Sabre wants to power AI travel bookings",
+   "url": "https://skift.com/2026/11/19/sabre-wants-to-be-the-transaction-engine-behind-ai-travel-bookings/",
+   "source": "Skift",
+   "via": [
+    "skift"
+   ],
+   "published": "2026-11-19",
+   "topics": [
+    "ai-travel-commerce"
+   ],
+   "kind": "know",
+   "summary": [
+    "AI platforms could become a new front door for travel bookings.",
+    "Sabre wants to handle the transactions behind those bookings.",
+    "Someone else may control the customer relationship."
+   ],
+   "why": {
+    "ai-travel-commerce": "It shows who may own booking infrastructure and customer relationships if AI assistants become the entry point.",
+    "general": "Relevant to anyone designing commerce flows that agents may sit in front of."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "pm",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "16-airbnb-floats-price-matching-as-ai-agent",
+   "title": "Airbnb floats price matching as AI agents loom",
+   "url": "https://skift.com/2026/11/20/airbnb-floats-price-matching-a-skift-test-shows-where-direct-booking-wins/",
+   "source": "Skift",
+   "via": [
+    "skift"
+   ],
+   "published": "2026-11-20",
+   "topics": [
+    "ai-travel-commerce"
+   ],
+   "kind": "know",
+   "summary": [
+    "Airbnb is floating the idea of price matching.",
+    "Skift ran a test of where direct booking wins.",
+    "AI agents may force a best price guarantee for short-term rentals."
+   ],
+   "why": {
+    "ai-travel-commerce": "Agents that compare prices put pressure on platforms to guarantee the best rate.",
+    "general": "A sign of how agent shopping could reshape booking experiences."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "pm",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "17-humans-plus-ai-often-add-no-synergy",
+   "title": "Humans plus AI often add no synergy",
+   "url": "https://www.uxtigers.com/post/ux-roundup-20261116",
+   "source": "Jakob Nielsen",
+   "via": [
+    "nielsen"
+   ],
+   "published": "2026-11-16",
+   "topics": [
+    "ai-interaction",
+    "craft"
+   ],
+   "kind": "know",
+   "summary": [
+    "Combining AI and humans produces no synergy, and AI alone is often best.",
+    "AI meets 99 percent of design brief criteria but sticks to a house style.",
+    "Toggle groups beat dropdowns for small sets of options."
+   ],
+   "why": {
+    "ai-interaction": "It challenges the assumption that a human in the loop always improves results.",
+    "craft": "The toggle group tip is a quick, usable interface guideline.",
+    "general": "A mixed roundup with one practical UI rule."
+   },
+   "importance": 2,
+   "practical": 3,
+   "roles": [
+    "designer",
+    "researcher"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "18-claude-code-and-obsidian-as-a-family-ai",
+   "title": "Claude Code and Obsidian as a family AI brain",
+   "url": "https://www.lennysnewsletter.com/p/how-i-ai-fable-52-review-how-i-fight",
+   "source": "Lenny's Newsletter",
+   "via": [
+    "lenny"
+   ],
+   "published": "2026-11-16",
+   "topics": [
+    "ai-interaction"
+   ],
+   "kind": "try",
+   "summary": [
+    "Scott Farrar stores context in Markdown files he can inspect and correct.",
+    "He argues chat suffers from memory drift, not a lack of intelligence.",
+    "Raw unstructured input works when the system organizes the files."
+   ],
+   "why": {
+    "ai-interaction": "Persistent, inspectable memory is a useful pattern for designing agent experiences.",
+    "general": "A hands-on example of keeping AI context transparent."
+   },
+   "importance": 2,
+   "practical": 4,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "19-lyssna-adds-custom-branding-for-shared-s",
+   "title": "Lyssna adds custom branding for shared studies",
+   "url": "https://www.lyssna.com/blog/custom-branding/",
+   "source": "Lyssna",
+   "via": [
+    "lyssna"
+   ],
+   "published": "2026-11-17",
+   "topics": [
+    "research"
+   ],
+   "kind": "try",
+   "summary": [
+    "Add your logo, colors, welcome image and screen copy to studies.",
+    "Applies to studies shared with participants you recruit yourself.",
+    "Set defaults once and run multiple brands on Enterprise."
+   ],
+   "why": {
+    "research": "Branded studies help your own customers recognize and trust the study from the first screen.",
+    "general": "A small tool update for teams running research with their own network."
+   },
+   "importance": 2,
+   "practical": 4,
+   "roles": [
+    "researcher",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "20-if-ai-works-from-anywhere-why-commute-to",
+   "title": "If AI works from anywhere, why commute to watch it",
+   "url": "https://uxdesign.cc/if-ai-works-from-anywhere-why-are-we-commuting-to-watch-it-f903012aaa86",
+   "source": "UX Collective",
+   "via": [
+    "uxcollective"
+   ],
+   "published": "2026-11-18",
+   "topics": [
+    "leadership",
+    "industry"
+   ],
+   "kind": "know",
+   "summary": [
+    "The author questions what return to office is winning people back to do.",
+    "Research showed conversation drops sharply beyond about fifty feet of distance.",
+    "Making now happens with AI, so the old case for the office weakens."
+   ],
+   "why": {
+    "leadership": "It gives leads a sharper way to think about the purpose of in-person time.",
+    "industry": "Return to office debates are shifting as AI changes where work gets made.",
+    "general": "An opinion piece on how work location arguments are changing."
+   },
+   "importance": 2,
+   "practical": 2,
+   "roles": [
+    "lead",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "21-what-giorgia-lupi-learned-on-the-yoga-ma",
+   "title": "What Giorgia Lupi learned on the yoga mat and at the painting table",
+   "url": "https://adobe.design/ideas/the-practice",
+   "source": "Adobe Design",
+   "via": [
+    "adobe"
+   ],
+   "published": null,
+   "topics": [
+    "craft",
+    "leadership"
+   ],
+   "kind": "know",
+   "summary": [
+    "The designer describes yoga as a practice where each pose prepares the next.",
+    "In her painting studio she works without knowing what comes next.",
+    "Tolerating not knowing now shapes how she approaches her creative work."
+   ],
+   "why": {
+    "craft": "A personal look at how creative practice outside design feeds design work.",
+    "leadership": "Offers a reflective view on comfort with uncertainty.",
+    "general": "A slower read about creative habits."
+   },
+   "importance": 1,
+   "practical": 1,
+   "roles": [
+    "designer"
+   ],
+   "mentions": 1
+  }
+ ]
+}
