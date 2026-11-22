@@ -167,7 +167,7 @@ footer a, .prose a { color: var(--blue-text); }
   h1 { font-size: 34px; } h2.sec { font-size: 26px; margin-top: 56px; }
   .spec { grid-template-columns: 1fr; gap: 6px; }
   .comp .stage { padding: 16px; justify-content: flex-start; }
-  .cover .cv { height: 220px !important; } .cover .cv svg { display: none; } .cover .nm { font-size: 64px !important; } .cover .txt { left: 20px !important; bottom: 22px !important; }
+  .cover .cv { height: 220px !important; } .cover .cv svg { display: none; } .cover .nm { font-size: 64px !important; } .cover .txt { left: 24px !important; right: 24px !important; bottom: 24px !important; }
 }
 </style>
 </head>
