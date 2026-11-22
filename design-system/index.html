@@ -101,12 +101,11 @@ tr:last-child td { border-bottom: 0; }
 .comp .guide ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: var(--ink); } .comp .guide li { margin: 3px 0; }
 footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 footer a, .prose a { color: var(--blue-text); }
+.back { width: 44px; height: 44px; border-radius: 999px; background: var(--chip); color: var(--ink); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
 @media (max-width: 860px) {
   .layout { display: block; }
-  aside { position: sticky; z-index: 5; height: auto; display: flex; gap: 6px; overflow-x: auto; padding: 10px 16px; background: var(--bg); border-right: 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  aside > .brand, aside .label { display: none; }
-  aside a { margin: 0; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 14px; }
-  main { padding: 20px 16px 72px; }
+  aside { display: none; }
+  main { padding: calc(56px + env(safe-area-inset-top, 0px)) 28px 72px; }
   h1 { font-size: 34px; } h2.sec { font-size: 26px; margin-top: 56px; }
   .spec { grid-template-columns: 1fr; gap: 6px; }
   .comp .stage { padding: 16px; justify-content: flex-start; }
@@ -125,6 +124,7 @@ footer a, .prose a { color: var(--blue-text); }
   <a href="#principles">Principles</a><a href="#content">Content</a><a href="#layout">Layout</a><a href="#iconography">Iconography</a><a href="#accessibility">Accessibility</a>
 </aside>
 <main>
+  <a class="back" href="../#/settings" aria-label="Back to Sift"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
   <div class="cover" id="overview">
 <div class="cv" style="height:280px;background:var(--bg);font-family:var(--font-sans);position:relative;overflow:hidden"><div class="txt" style="position:absolute;left:40px;bottom:40px"><div class="nm" style="font-size:96px;line-height:1;font-weight:500;letter-spacing:-2px;color:var(--primary)">Sift</div><div style="margin-top:12px;font-size:17px;color:var(--muted)">Five picks a week, chosen for where you are going</div></div></div>
 </div>

@@ -159,12 +159,11 @@ tr:last-child td { border-bottom: 0; }
 .comp .guide ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: var(--ink); } .comp .guide li { margin: 3px 0; }
 footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
 footer a, .prose a { color: var(--blue-text); }
+.back { width: 44px; height: 44px; border-radius: 999px; background: var(--chip); color: var(--ink); display: flex; align-items: center; justify-content: center; margin-bottom: 24px; }
 @media (max-width: 860px) {
   .layout { display: block; }
-  aside { position: sticky; z-index: 5; height: auto; display: flex; gap: 6px; overflow-x: auto; padding: 10px 16px; background: var(--bg); border-right: 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
-  aside > .brand, aside .label { display: none; }
-  aside a { margin: 0; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 14px; }
-  main { padding: 20px 16px 72px; }
+  aside { display: none; }
+  main { padding: calc(56px + env(safe-area-inset-top, 0px)) 28px 72px; }
   h1 { font-size: 34px; } h2.sec { font-size: 26px; margin-top: 56px; }
   .spec { grid-template-columns: 1fr; gap: 6px; }
   .comp .stage { padding: 16px; justify-content: flex-start; }
@@ -183,6 +182,7 @@ footer a, .prose a { color: var(--blue-text); }
   ${nav.slice(4).map(([id, t]) => `<a href="#${id}">${esc(t)}</a>`).join('')}
 </aside>
 <main>
+  <a class="back" href="../#/settings" aria-label="Back to Sift"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></a>
   <div class="cover" id="overview">${preview('Cover')}</div>
   <h1>Sift design system</h1>
   <div class="prose"><p class="lead">${inline(intro)}</p></div>
