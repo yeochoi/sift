@@ -9,6 +9,7 @@
   --border: #E2DDD8;
   --ring: #B9B1AB;
   --chip: #F1EDEA;
+  --tint: #F4F1EE;
   --primary: #2F4BA8;
   --blue-text: #2A3F8F;
   --soft: #E9EDF8;
@@ -21,6 +22,7 @@
   --gutter: 28px;
   --top: 64px;
   --radius-field: 14px;
+  --radius-block: 20px;
   --radius-pill: 999px;
 
   --size-button: 52px;

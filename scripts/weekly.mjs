@@ -122,11 +122,11 @@ async function readSource(src) {
 
 // Claude
 // Stage 1, Haiku. Set SIFT_TRIAGE_MODEL to claude-sonnet-5-5 for sharper judgment at about twenty times the cost. Short text of every post. Merge, tag, score, a one line gist, and the weekly briefing.
-// Stage 2, Haiku. Full text of the top items only. A summary good enough to skip the article.
+// Stage 2, Haiku. Full text of every item, so any of them can be picked. A summary good enough to skip the article.
 // Both go through the Batch API, which costs half and is fine for a job that runs at night.
 const TRIAGE_MODEL = process.env.SIFT_TRIAGE_MODEL || 'claude-haiku-5-5'
 const SUMMARY_MODEL = process.env.SIFT_SUMMARY_MODEL || 'claude-haiku-5-5'
-const DETAIL_COUNT = 10
+const DETAIL_COUNT = 30
 const FULL_LIMIT = 24000
 const NO_PUNCT = 'No colons, semicolons or dashes.'
 

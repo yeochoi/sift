@@ -1,5 +1,5 @@
-const CACHE = 'sift-v1';
-const SHELL = ['./', './index.html', './pick.js?v=1', './manifest.json', './design-system/tokens.css?v=1', './icon-180.png', './icon-192.png', './icon-512.png'];
+const CACHE = 'sift-v2';
+const SHELL = ['./', './index.html', './pick.js?v=2', './manifest.json', './design-system/tokens.css?v=2', './icon-180.png', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));

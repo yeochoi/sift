@@ -8,7 +8,7 @@ Live at https://yeochoi.github.io/sift/. Open it in Safari and choose Add to Hom
 
 1. **Every Monday, the same for everyone.** `.github/workflows/weekly.yml` runs `scripts/weekly.mjs`. It reads the sources in `data/sources.json` and keeps posts from the last 8 days. Then two cheap stages, both through the Batch API at half price.
    - Haiku reads a short part of every post, merges the same story from several sources, tags and scores each one, writes a one line gist and the briefing for the week.
-   - Haiku then reads the whole article for the top ten and writes a summary good enough to skip the article.
+   - Haiku then reads the whole article for every item and writes a summary good enough to skip the article.
    A run costs about a cent. Set the repository variable SIFT_TRIAGE_MODEL to claude-sonnet-5-5 for sharper picks at about twenty cents.
    The pool goes to `data/latest.json` and `data/weeks/<week>.json`, with the token use of each run in `usage`.
 2. **On the phone, per person.** `pick.js` scores the pool with your settings and picks five. The big story of the week first, then three from your topics, each from a different topic when it can, then one from outside your topics. No AI call happens in the app.

@@ -8,7 +8,9 @@ Five picks a week, chosen for where you are going. Sift reads trusted design and
 2. **Say why.** Every pick carries one line on why it was chosen for you. Trust in the curation comes from seeing the reason.
 3. **Blue means state and action.** Ink blue is for the main button, a selected option, a selected chip, the current tab and the read check. Never to rank content.
 4. **Equal tags.** Try it and Know it share one neutral style and differ only by icon, so neither reads as more important.
-5. **Same family as SaySay and Manna.** The in the middle direction, one warm ground, Outfit, light titles, content on the page without cards.
+5. **Read here, not there.** The week in short and each full summary are written so the article is optional. The original is one tap away, by the source name and at the end.
+6. **One soft block per screen.** `tint` sits only behind what is enough on its own, the week in short or a pick's one line gist.
+7. **Same family as SaySay and Manna.** The in the middle direction, one warm ground, Outfit, light titles, content on the page without cards.
 
 ## Content
 
@@ -23,7 +25,7 @@ Five picks a week, chosen for where you are going. Sift reads trusted design and
 | Action and state | `primary`, `blue-text`, `soft` | Main button, selected option, selected chip, current tab, read check, Why you |
 | Ground | `bg`, `surface`, `line`, `border` | Screens, secondary buttons, fields, hairlines |
 | Text | `ink`, `muted`, `tag-text` | Content, meta lines, tags |
-| Quiet | `chip`, `ring` | Tags, round buttons, segmented track, empty option circle |
+| Quiet | `chip`, `ring`, `tint` | Tags, round buttons, segmented track, empty option circle |
 | Danger | `danger` | Reset only |
 
 Rules
