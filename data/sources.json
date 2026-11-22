@@ -40,8 +40,9 @@
   {
    "id": "nielsen",
    "name": "Jakob Nielsen",
-   "home": "https://jakobnielsenphd.substack.com/",
+   "home": "https://www.uxtigers.com/",
    "feeds": [
+    "https://www.uxtigers.com/feed",
     "https://jakobnielsenphd.substack.com/feed"
    ],
    "kind": "article"
@@ -87,15 +88,13 @@
    "kind": "article"
   },
   {
-   "id": "phocuswire",
-   "name": "PhocusWire",
-   "home": "https://www.phocuswire.com/",
+   "id": "skift",
+   "name": "Skift",
+   "home": "https://skift.com/",
    "feeds": [
-    "https://www.phocuswire.com/rss",
-    "https://www.phocuswire.com/rss/news"
+    "https://skift.com/feed/"
    ],
-   "kind": "article",
-   "page": "/news/[a-z-]+/[a-z0-9-]+$"
+   "kind": "article"
   },
   {
    "id": "lyssna",

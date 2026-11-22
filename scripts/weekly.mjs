@@ -165,7 +165,7 @@ ${topicList}
 
 Write every summary point and why sentence in your own words from the given text. Never invent facts, numbers or quotes. If the text is too thin to summarise, leave the item out.
 
-Call save_pool once with the items.
+Call the save_pool tool once with all the items. Do not answer in text.
 
 POSTS
 ${candidates.map((c, i) => `[${i + 1}] source=${c.sourceId} (${c.sourceName}) kind=${c.kind} date=${c.date || 'unknown'}\ntitle: ${c.title}\nurl: ${c.url}\ntext: ${c.text}`).join('\n\n')}`
@@ -181,16 +181,20 @@ async function askClaude(candidates) {
       model: MODEL,
       max_tokens: 32000,
       tools: [POOL_TOOL],
-      tool_choice: { type: 'tool', name: 'save_pool' },
+      tool_choice: { type: 'auto' },
       messages: [{ role: 'user', content: prompt(candidates) }]
     }),
     signal: AbortSignal.timeout(600000)
   })
   const body = await res.json()
   if (!res.ok) throw new Error(`Claude API ${res.status} ${JSON.stringify(body.error || body)}`)
-  const use = (body.content || []).find((b) => b.type === 'tool_use')
-  if (!use) throw new Error('Claude did not return the pool.')
-  return { items: use.input.items || [], usage: body.usage }
+  const use = (body.content || []).find((b) => b.type === 'tool_use' && b.name === 'save_pool')
+  if (use) return { items: use.input.items || [], usage: body.usage }
+  // Some models answer in text. Take the JSON from the text instead.
+  const text = (body.content || []).filter((b) => b.type === 'text').map((b) => b.text).join('\n')
+  const m = text.match(/\{[\s\S]*"items"[\s\S]*\}/)
+  if (m) { try { return { items: JSON.parse(m[0]).items || [], usage: body.usage } } catch {} }
+  throw new Error(`Claude did not return the pool. Stop reason ${body.stop_reason}. ${text.slice(0, 300)}`)
 }
 
 // Keep only fields and values the app understands.
@@ -239,7 +243,7 @@ async function main() {
   console.log(`${week}: ${pool.length} items from ${candidates.length} posts`)
 }
 
-export { parseFeed, toText, weekId, clean, readSource }
+export { parseFeed, toText, weekId, clean, readSource, askClaude }
 if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(import.meta.url).pathname)) {
   main().catch((e) => { console.error(e.message); process.exit(1) })
 }
