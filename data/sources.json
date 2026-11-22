@@ -1,0 +1,130 @@
+{
+ "note": "Where Sift reads each week. home is the site. feeds are tried in order. If none works the job looks for a feed link on home, and for sites with no feed, page is a pattern for article links on home. kind digest means one post holds many stories, like TLDR.",
+ "sources": [
+  {
+   "id": "nng",
+   "name": "NN/g",
+   "home": "https://www.nngroup.com/articles/",
+   "feeds": [
+    "https://www.nngroup.com/feed/rss/"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "smashing",
+   "name": "Smashing Magazine",
+   "home": "https://www.smashingmagazine.com/",
+   "feeds": [
+    "https://www.smashingmagazine.com/feed/"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "uxcollective",
+   "name": "UX Collective",
+   "home": "https://uxdesign.cc/",
+   "feeds": [
+    "https://uxdesign.cc/feed"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "lenny",
+   "name": "Lenny's Newsletter",
+   "home": "https://www.lennysnewsletter.com/",
+   "feeds": [
+    "https://www.lennysnewsletter.com/feed"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "nielsen",
+   "name": "Jakob Nielsen",
+   "home": "https://jakobnielsenphd.substack.com/",
+   "feeds": [
+    "https://jakobnielsenphd.substack.com/feed"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "lukew",
+   "name": "Luke Wroblewski",
+   "home": "https://www.lukew.com/ff/",
+   "feeds": [
+    "https://www.lukew.com/ff/rss.xml",
+    "https://feeds.feedburner.com/lukew"
+   ],
+   "kind": "article",
+   "page": "/ff/entry\\.asp\\?\\d+"
+  },
+  {
+   "id": "pair",
+   "name": "Google PAIR",
+   "home": "https://medium.com/people-ai-research",
+   "feeds": [
+    "https://medium.com/feed/people-ai-research"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "adobe",
+   "name": "Adobe Design",
+   "home": "https://adobe.design/",
+   "feeds": [
+    "https://adobe.design/rss.xml",
+    "https://adobe.design/feed.xml"
+   ],
+   "kind": "article",
+   "page": "/ideas/[a-z0-9-]+$"
+  },
+  {
+   "id": "hamel",
+   "name": "Hamel Husain",
+   "home": "https://hamel.dev/",
+   "feeds": [
+    "https://hamel.dev/index.xml"
+   ],
+   "kind": "article"
+  },
+  {
+   "id": "phocuswire",
+   "name": "PhocusWire",
+   "home": "https://www.phocuswire.com/",
+   "feeds": [
+    "https://www.phocuswire.com/rss",
+    "https://www.phocuswire.com/rss/news"
+   ],
+   "kind": "article",
+   "page": "/news/[a-z-]+/[a-z0-9-]+$"
+  },
+  {
+   "id": "lyssna",
+   "name": "Lyssna",
+   "home": "https://www.lyssna.com/blog/",
+   "feeds": [
+    "https://www.lyssna.com/blog/rss.xml",
+    "https://www.lyssna.com/blog/feed/"
+   ],
+   "kind": "article",
+   "page": "/blog/[a-z0-9-]+/?$"
+  },
+  {
+   "id": "tldr-design",
+   "name": "TLDR Design",
+   "home": "https://tldr.tech/design",
+   "feeds": [
+    "https://tldr.tech/api/rss/design"
+   ],
+   "kind": "digest"
+  },
+  {
+   "id": "tldr-ai",
+   "name": "TLDR AI",
+   "home": "https://tldr.tech/ai",
+   "feeds": [
+    "https://tldr.tech/api/rss/ai"
+   ],
+   "kind": "digest"
+  }
+ ]
+}

@@ -1,0 +1,209 @@
+{
+ "week": "sample",
+ "created": "2026-11-22T13:00:00Z",
+ "model": "hand picked",
+ "sample": true,
+ "note": "Sample pool with real articles, picked by hand on Nov 22 2026 so the app works before the first weekly run. Some are months old. The first run replaces this file.",
+ "sources": [],
+ "items": [
+  {
+   "id": "01-ai-ux-playground",
+   "title": "AI UX Playground collects over 150 AI interface patterns",
+   "url": "https://www.smashingmagazine.com/the-smashing-newsletter/smashing-newsletter-issue-584/",
+   "source": "Smashing Magazine",
+   "via": ["smashing"],
+   "published": "2026-11-10",
+   "topics": ["ai-interaction", "craft"],
+   "kind": "try",
+   "summary": ["Over 150 patterns, demos and product teardowns for AI interfaces", "Covers models that stream, act on their own or use tools", "Part of an issue on AI design workflows for 2027"],
+   "why": {
+    "ai-interaction": "A ready library for the patterns you will need when designing agents and streaming answers.",
+    "general": "A practical reference for anyone adding AI to a product."
+   },
+   "importance": 3, "practical": 5, "roles": ["designer"], "mentions": 1
+  },
+  {
+   "id": "02-eval-systems",
+   "title": "Building eval systems that improve your AI product",
+   "url": "https://www.lennysnewsletter.com/p/building-eval-systems-that-improve",
+   "source": "Lenny's Newsletter",
+   "via": ["lenny"],
+   "published": null,
+   "topics": ["ai-quality"],
+   "kind": "try",
+   "summary": ["A practical guide to measuring what matters in an AI product", "Moves beyond generic scores to checks tied to your product", "Written by Hamel Husain and Shreya Shankar, who teach the top evals course"],
+   "why": {
+    "ai-quality": "Deciding what a good AI answer looks like is becoming design work, and this is a clear place to start.",
+    "general": "Evals are turning into a core skill for anyone shipping AI features."
+   },
+   "importance": 4, "practical": 5, "roles": ["pm", "designer"], "mentions": 1
+  },
+  {
+   "id": "03-agentic-ai-travel",
+   "title": "Booking.com, Google, Sabre and Skyscanner on agentic AI and trust",
+   "url": "https://www.phocuswire.com/Artificial-Intelligence?pg=18",
+   "source": "PhocusWire",
+   "via": ["phocuswire"],
+   "published": "2026-03-06",
+   "topics": ["ai-travel-commerce", "trust"],
+   "kind": "know",
+   "summary": ["Travel executives discuss what holds back agentic AI", "Technology readiness and consumer trust are the two big questions", "A view of where booking flows may go next"],
+   "why": {
+    "ai-travel-commerce": "Shows how the biggest travel players think about AI agents booking on a traveller's behalf.",
+    "trust": "Trust comes up as the main barrier, not the technology.",
+    "general": "A clear case of AI agents changing a whole industry's funnel."
+   },
+   "importance": 4, "practical": 2, "roles": ["designer", "pm", "lead"], "mentions": 1
+  },
+  {
+   "id": "04-figma-config",
+   "title": "Figma adds code layers, motion and shaders to the canvas",
+   "url": "https://tldr.tech/design/2026-07-06",
+   "source": "TLDR Design",
+   "via": ["tldr-design"],
+   "published": "2026-07-06",
+   "topics": ["ai-prototyping", "industry"],
+   "kind": "know",
+   "summary": ["Announced at Config 2026", "Code layers, motion and shader tools join the design canvas", "Aimed at code native, agent driven product building"],
+   "why": {
+    "ai-prototyping": "The main design tool is moving toward code, which changes how prototypes get made.",
+    "industry": "The biggest design tool release of the year.",
+    "general": "Where the main design tool is heading as AI shifts work toward code."
+   },
+   "importance": 5, "practical": 3, "roles": ["designer", "lead"], "mentions": 2
+  },
+  {
+   "id": "05-product-sense",
+   "title": "A concrete definition of product sense, and how to build it",
+   "url": "https://tldr.tech/design/2026-07-29",
+   "source": "TLDR Design",
+   "via": ["tldr-design"],
+   "published": "2026-07-29",
+   "topics": ["product-strategy", "leadership"],
+   "kind": "know",
+   "summary": ["As AI takes over execution, deciding what to build matters more", "Defines product sense in concrete terms", "Argues it takes more than reading critiques and research"],
+   "why": {
+    "product-strategy": "Gives words to the skill that matters most as AI does more of the making.",
+    "leadership": "A useful frame for growing judgment in a team.",
+    "general": "As AI does more of the making, judgment about what to make is what stays yours."
+   },
+   "importance": 3, "practical": 3, "roles": ["designer", "pm", "lead"], "mentions": 1
+  },
+  {
+   "id": "06-adobe-prototyping",
+   "title": "The systems behind AI assisted prototyping at Adobe",
+   "url": "https://adobe.design/ideas/the-systems-behind-ai-assisted-prototyping-at-adobe",
+   "source": "Adobe Design",
+   "via": ["adobe"],
+   "published": null,
+   "topics": ["ai-prototyping", "design-systems"],
+   "kind": "try",
+   "summary": ["Vibe coding works best with sensible defaults and strong setup", "An AI ready design system makes the biggest difference", "Designers can take part in making change, not only describing it"],
+   "why": {
+    "ai-prototyping": "A real team's setup for vibe coding, close to how you already build your own apps.",
+    "design-systems": "Shows why a design system matters even more when AI writes the code.",
+    "general": "A rare look at how a large design team actually runs AI prototyping."
+   },
+   "importance": 3, "practical": 4, "roles": ["designer", "lead"], "mentions": 1
+  },
+  {
+   "id": "07-trust-tips",
+   "title": "Six UX tips for AI people can trust",
+   "url": "https://www.salesforce.com/blog/6-ux-design-tips-trust-ai/",
+   "source": "Salesforce",
+   "via": [],
+   "published": null,
+   "topics": ["trust", "ai-interaction"],
+   "kind": "try",
+   "summary": ["Trust comes from transparency, control and predictability", "Show what the AI is doing, its limits and its progress", "Six practical tips with examples"],
+   "why": {
+    "trust": "A simple model of trust you can apply to any AI feature right away.",
+    "ai-interaction": "Concrete ways to show an agent's progress and limits.",
+    "general": "A short checklist for any AI feature."
+   },
+   "importance": 2, "practical": 4, "roles": ["designer"], "mentions": 1
+  },
+  {
+   "id": "08-future-ux-research",
+   "title": "The future of UX research with AI tools",
+   "url": "https://www.uxmatters.com/mt/archives/2026/05/the-future-of-ux-research-navigating-ai-powered-tools-and-methods.php",
+   "source": "UXmatters",
+   "via": [],
+   "published": "2026-05-04",
+   "topics": ["research"],
+   "kind": "know",
+   "summary": ["Most teams now use AI for analysis, transcripts and synthesis", "AI tightens existing methods more than it adds new ones", "Analysis shifts from sorting toward judgment"],
+   "why": {
+    "research": "A calm view of what AI really changes in research and what stays the same.",
+    "general": "Useful context for anyone running or reading research."
+   },
+   "importance": 2, "practical": 3, "roles": ["researcher", "designer"], "mentions": 1
+  },
+  {
+   "id": "09-research-trends",
+   "title": "What 100 UX researchers expect for 2026",
+   "url": "https://www.lyssna.com/en/blog/ux-research-trends",
+   "source": "Lyssna",
+   "via": ["lyssna"],
+   "published": "2025-12-17",
+   "topics": ["research"],
+   "kind": "know",
+   "summary": ["A survey of 100 UX researchers on the trends ahead", "88 percent named AI assisted analysis and synthesis", "ResearchOps and accessibility first research also came up"],
+   "why": {
+    "research": "A quick read of where research practice is heading, from the researchers themselves.",
+    "general": "Shows how far AI has already moved into research work."
+   },
+   "importance": 2, "practical": 2, "roles": ["researcher"], "mentions": 1
+  },
+  {
+   "id": "10-product-architect",
+   "title": "AI is turning designers into product architects",
+   "url": "https://tldr.tech/design/2026-08-28",
+   "source": "TLDR Design",
+   "via": ["tldr-design"],
+   "published": "2026-08-28",
+   "topics": ["leadership", "product-strategy"],
+   "kind": "know",
+   "summary": ["AI blurs the line between design, product and engineering", "Handoff based work is becoming outdated", "Designers move toward product thinking and systems design"],
+   "why": {
+    "leadership": "A view of how design roles may be reshaped, useful when planning a team.",
+    "product-strategy": "Argues designers will own more of the product decisions.",
+    "general": "One take on how the designer role is changing."
+   },
+   "importance": 3, "practical": 2, "roles": ["designer", "lead"], "mentions": 1
+  },
+  {
+   "id": "11-ai-evals-guide",
+   "title": "A hands on guide to AI evals for product teams",
+   "url": "https://www.producttalk.org/ai-evals/",
+   "source": "Product Talk",
+   "via": [],
+   "published": null,
+   "topics": ["ai-quality", "research"],
+   "kind": "try",
+   "summary": ["Evals are ways to check an AI product is working well", "Treats evals as a new discovery habit for product teams", "Hands on steps rather than theory"],
+   "why": {
+    "ai-quality": "Frames evals as discovery work, which is close to how designers already think.",
+    "research": "Evals borrow a lot from research methods.",
+    "general": "A friendly start on a skill many teams now ask for."
+   },
+   "importance": 2, "practical": 4, "roles": ["pm", "designer", "researcher"], "mentions": 1
+  },
+  {
+   "id": "12-ai-patterns",
+   "title": "Design patterns for AI interfaces",
+   "url": "https://www.smashingmagazine.com/2025/07/design-patterns-ai-interfaces/",
+   "source": "Smashing Magazine",
+   "via": ["smashing"],
+   "published": "2025-07-01",
+   "topics": ["ai-interaction"],
+   "kind": "try",
+   "summary": ["A practical overview of patterns for AI features", "Explains why chat is receding as the main AI interface", "Points to task oriented agent patterns instead"],
+   "why": {
+    "ai-interaction": "A solid base before you design your next AI feature beyond a chat box.",
+    "general": "A good starting map of AI interface patterns."
+   },
+   "importance": 2, "practical": 4, "roles": ["designer"], "mentions": 1
+  }
+ ]
+}

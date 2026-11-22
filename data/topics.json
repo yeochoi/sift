@@ -1,0 +1,47 @@
+{
+  "note": "The topics Sift tags with. The app recommends from these by role and goal. Edit here, the job and the app both read it.",
+  "topics": [
+    { "id": "ai-interaction", "name": "AI interaction and agents" },
+    { "id": "trust", "name": "Trust and transparency" },
+    { "id": "ai-prototyping", "name": "AI prototyping" },
+    { "id": "ai-quality", "name": "AI quality and evals" },
+    { "id": "ai-travel-commerce", "name": "AI in travel and commerce" },
+    { "id": "research", "name": "Research methods" },
+    { "id": "design-systems", "name": "Design systems" },
+    { "id": "accessibility", "name": "Accessibility" },
+    { "id": "growth", "name": "Growth and metrics" },
+    { "id": "leadership", "name": "Design leadership" },
+    { "id": "product-strategy", "name": "Product strategy" },
+    { "id": "craft", "name": "Interface craft" },
+    { "id": "industry", "name": "Industry news" }
+  ],
+  "roles": [
+    { "id": "designer", "name": "Product designer" },
+    { "id": "pm", "name": "Product manager" },
+    { "id": "researcher", "name": "UX researcher" },
+    { "id": "lead", "name": "Design or product lead" },
+    { "id": "other", "name": "Something else" }
+  ],
+  "goals": [
+    { "id": "grow", "name": "Grow in my current role", "hint": "Sharper craft and methods" },
+    { "id": "ai", "name": "Move into AI product design", "hint": "Patterns, trust and quality for AI" },
+    { "id": "lead", "name": "Lead a team", "hint": "Strategy, influence and hiring" },
+    { "id": "unsure", "name": "Not sure yet", "hint": "A broad mix to start" }
+  ],
+  "recommend": {
+    "note": "Topics suggested on Your topics. Goal first, then role fills up to six.",
+    "goal": {
+      "grow": ["craft", "research", "design-systems"],
+      "ai": ["ai-interaction", "trust", "ai-prototyping", "ai-quality"],
+      "lead": ["leadership", "product-strategy", "growth"],
+      "unsure": ["ai-interaction", "research", "craft"]
+    },
+    "role": {
+      "designer": ["research", "ai-travel-commerce", "craft", "design-systems"],
+      "pm": ["product-strategy", "growth", "ai-quality", "research"],
+      "researcher": ["research", "trust", "ai-quality", "accessibility"],
+      "lead": ["leadership", "product-strategy", "design-systems", "growth"],
+      "other": ["industry", "craft", "research", "ai-interaction"]
+    }
+  }
+}

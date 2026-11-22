@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sift design system</title>
+<link rel="icon" type="image/svg+xml" href="../icon.svg">
+<meta name="description" content="Colours, type, components and rules of Sift, five design and AI reads a week chosen for where you are going.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap">
+<style>
+:root {
+  --bg: #FCFAF8;
+  --surface: #FFFFFF;
+  --ink: #211F1D;
+  --muted: #6B6560;
+  --tag-text: #4F4844;
+  --line: #EDE9E5;
+  --border: #E2DDD8;
+  --ring: #B9B1AB;
+  --chip: #F1EDEA;
+  --primary: #2F4BA8;
+  --blue-text: #2A3F8F;
+  --soft: #E9EDF8;
+  --danger: #A8321E;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 28px;
+  --row-pad: 14px;
+  --gutter: 28px;
+  --top: 64px;
+  --radius-field: 14px;
+  --radius-pill: 999px;
+
+  --size-button: 52px;
+  --size-option: 64px;
+  --size-chip: 40px;
+  --size-round: 44px;
+  --size-nav: 56px;
+  --font-sans: Outfit, -apple-system, system-ui, sans-serif;
+}
+.hero { font-family: var(--font-sans); font-size: 34px; line-height: 40px; font-weight: 300; letter-spacing: -0.6px; }
+.title { font-family: var(--font-sans); font-size: 28px; line-height: 34px; font-weight: 300; letter-spacing: -0.4px; }
+.pick { font-family: var(--font-sans); font-size: 17px; line-height: 23px; font-weight: 400; }
+.body { font-family: var(--font-sans); font-size: 17px; line-height: 25px; font-weight: 400; }
+.button { font-family: var(--font-sans); font-size: 17px; line-height: 22px; font-weight: 500; }
+.lead { font-family: var(--font-sans); font-size: 15px; line-height: 22px; font-weight: 400; }
+.small { font-family: var(--font-sans); font-size: 13px; line-height: 18px; font-weight: 400; }
+.tag { font-family: var(--font-sans); font-size: 12px; line-height: 16px; font-weight: 400; }
+.tab { font-family: var(--font-sans); font-size: 11px; line-height: 14px; font-weight: 400; }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 24px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; }
+.layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); max-width: 1280px; margin: 0 auto; }
+aside { position: sticky; top: 0; height: 100vh; overflow-y: auto; padding: 32px 20px 32px 28px; border-right: 1px solid var(--line); }
+aside > .brand { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 18px; }
+aside a { display: block; padding: 6px 10px; margin: 0 -10px; border-radius: 8px; color: var(--ink); text-decoration: none; font-size: 15px; }
+aside a:hover { background: var(--surface); }
+aside .label { font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 22px 0 6px; }
+main { padding: 32px 40px 96px; min-width: 0; }
+.cover { border-radius: 20px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
+.cover > .cv { width: 100% !important; }
+h1 { font-size: 44px; font-weight: 600; letter-spacing: -.02em; margin: 36px 0 8px; }
+h2.sec { font-size: 30px; font-weight: 600; letter-spacing: -.02em; margin: 72px 0 6px; padding-top: 8px; }
+h3 { font-size: 20px; font-weight: 600; margin: 32px 0 8px; }
+.lead { font-size: 17px; line-height: 1.55; color: var(--muted); max-width: 680px; margin: 0; }
+.prose { max-width: 720px; font-size: 15px; line-height: 1.6; }
+.prose p { margin: 0 0 10px; } .prose ul, .prose ol { margin: 0 0 14px; padding-left: 20px; } .prose li { margin: 3px 0; }
+.prose h3 { font-size: 17px; margin: 22px 0 6px; } .prose b { font-weight: 600; }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .86em; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; }
+.table { overflow-x: auto; margin: 6px 0 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+.group { margin-top: 28px; } .group h3 { margin: 0 0 2px; } .group .use { color: var(--muted); font-size: 14px; margin: 0 0 12px; }
+.swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px; }
+.sw { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.sw .chip { height: 72px; border-bottom: 1px solid var(--line); }
+.sw .meta { padding: 10px 12px 12px; font-size: 13px; line-height: 1.45; }
+.sw .meta b { font-size: 14px; font-weight: 600; } .sw .meta span { color: var(--muted); float: right; font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.sw .meta p { color: var(--muted); margin: 6px 0 0; }
+.specimens { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+.spec { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 20px; padding: 18px 20px; border-bottom: 1px solid var(--line); align-items: baseline; }
+.spec:last-child { border-bottom: 0; }
+.spec .info { font-size: 13px; color: var(--muted); line-height: 1.5; } .spec .info b { color: var(--ink); font-weight: 600; font-size: 14px; display: block; }
+.spec .sample { min-width: 0; overflow-wrap: anywhere; }
+.scales { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.scale { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 6px 16px; }
+.scale h3 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 10px 0 4px; }
+.step { display: grid; grid-template-columns: 110px 60px minmax(0, 1fr); gap: 10px; align-items: center; padding: 8px 0; border-top: 1px solid var(--line); font-size: 13px; }
+.step b { font-weight: 600; } .step .v { color: var(--muted); font-family: ui-monospace, Menlo, monospace; font-size: 12px; }
+.bar { height: 10px; background: var(--primary); border-radius: 3px; } .box { width: 34px; height: 34px; background: var(--soft); border: 1px solid var(--line); }
+.comp { margin-top: 28px; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; }
+.comp .stage { background: var(--bg); padding: 28px; border-bottom: 1px solid var(--line); overflow-x: auto; display: flex; justify-content: center; }
+.comp .guide { padding: 20px 24px 22px; }
+.comp .guide h3 { margin: 0 0 4px; font-size: 22px; } .comp .guide .lead { font-size: 15px; margin-bottom: 10px; }
+.comp .guide ul { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.6; color: var(--ink); } .comp .guide li { margin: 3px 0; }
+footer { margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+footer a, .prose a { color: var(--blue-text); }
+@media (max-width: 860px) {
+  .layout { display: block; }
+  aside { position: sticky; z-index: 5; height: auto; display: flex; gap: 6px; overflow-x: auto; padding: 10px 16px; background: var(--bg); border-right: 0; border-bottom: 1px solid var(--line); white-space: nowrap; }
+  aside > .brand, aside .label { display: none; }
+  aside a { margin: 0; padding: 6px 12px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); font-size: 14px; }
+  main { padding: 20px 16px 72px; }
+  h1 { font-size: 34px; } h2.sec { font-size: 26px; margin-top: 56px; }
+  .spec { grid-template-columns: 1fr; gap: 6px; }
+  .comp .stage { padding: 16px; justify-content: flex-start; }
+  .cover .cv { height: 220px !important; } .cover .cv svg { display: none; } .cover .nm { font-size: 64px !important; } .cover .txt { left: 20px !important; bottom: 22px !important; }
+}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside>
+  <div class="brand">Sift</div>
+  <a href="#overview">Overview</a><a href="#colour">Colour</a><a href="#type">Type</a><a href="#scale">Spacing and shape</a>
+  <div class="label">Components</div>
+  <a href="#pickrow">Pick Row</a><a href="#tag">Tag</a><a href="#mainbutton">Main Button</a><a href="#optionrow">Option Row</a><a href="#topicchip">Topic Chip</a><a href="#tabbar">Tab Bar</a>
+  <div class="label">Guidelines</div>
+  <a href="#principles">Principles</a><a href="#content">Content</a><a href="#layout">Layout</a><a href="#iconography">Iconography</a><a href="#accessibility">Accessibility</a>
+</aside>
+<main>
+  <div class="cover" id="overview">
+<div class="cv" style="height:280px;background:var(--bg);font-family:var(--font-sans);position:relative;overflow:hidden"><div class="txt" style="position:absolute;left:40px;bottom:40px"><div class="nm" style="font-size:96px;line-height:1;font-weight:500;letter-spacing:-2px;color:var(--primary)">Sift</div><div style="margin-top:12px;font-size:17px;color:var(--muted)">Five picks a week, chosen for where you are going</div></div></div>
+</div>
+  <h1>Sift design system</h1>
+  <div class="prose"><p class="lead">Five picks a week, chosen for where you are going. Sift reads trusted design and AI sources, and every week picks five reads for your role, your goal and your topics. When you finish the five, you are done for the week.</p></div>
+
+  <h2 class="sec" id="colour">Colour</h2>
+  <p class="lead">Every colour has one job. Text colours pass 4.5 to 1 where they are used.</p>
+  <div class="group"><h3>Action and state</h3><p class="use">Main button, selected option, selected chip, current tab, read check, Why you</p><div class="swatches"><div class="sw"><div class="chip" style="background:#2F4BA8"></div><div class="meta"><b>primary</b><span>#2F4BA8</span><p>Ink blue fill for the one main action and the selected option. Also the read check. Text on it is white, 7.7 to 1.</p></div></div><div class="sw"><div class="chip" style="background:#2A3F8F"></div><div class="meta"><b>blue-text</b><span>#2A3F8F</span><p>Blue for text. The current tab, Why you, links and selected chips. 9.2 to 1 on bg, 8.1 on soft.</p></div></div><div class="sw"><div class="chip" style="background:#E9EDF8"></div><div class="meta"><b>soft</b><span>#E9EDF8</span><p>Behind a selected topic chip. Text on it uses blue-text.</p></div></div></div></div><div class="group"><h3>Ground</h3><p class="use">Screens, secondary buttons, fields, hairlines</p><div class="swatches"><div class="sw"><div class="chip" style="background:#FCFAF8"></div><div class="meta"><b>bg</b><span>#FCFAF8</span><p>The one warm ground on every screen. Same as the SaySay middle direction.</p></div></div><div class="sw"><div class="chip" style="background:#FFFFFF"></div><div class="meta"><b>surface</b><span>#FFFFFF</span><p>Secondary buttons, unselected topic chips and the keyword field.</p></div></div><div class="sw"><div class="chip" style="background:#EDE9E5"></div><div class="meta"><b>line</b><span>#EDE9E5</span><p>Hairlines between rows and sections.</p></div></div><div class="sw"><div class="chip" style="background:#E2DDD8"></div><div class="meta"><b>border</b><span>#E2DDD8</span><p>Borders of secondary buttons, unselected chips and the keyword field.</p></div></div></div></div><div class="group"><h3>Text</h3><p class="use">Content, meta lines, tags</p><div class="swatches"><div class="sw"><div class="chip" style="background:#211F1D"></div><div class="meta"><b>ink</b><span>#211F1D</span><p>Titles, pick titles and body text. 16 to 1 on bg.</p></div></div><div class="sw"><div class="chip" style="background:#6B6560"></div><div class="meta"><b>muted</b><span>#6B6560</span><p>Meta lines, dates, labels, read titles and inactive tabs. 5.6 to 1 on bg.</p></div></div><div class="sw"><div class="chip" style="background:#4F4844"></div><div class="meta"><b>tag-text</b><span>#4F4844</span><p>Text and icon in the Try it and Know it tag. 7.6 to 1 on chip.</p></div></div></div></div><div class="group"><h3>Quiet</h3><p class="use">Tags, round buttons, segmented track, empty option circle</p><div class="swatches"><div class="sw"><div class="chip" style="background:#F1EDEA"></div><div class="meta"><b>chip</b><span>#F1EDEA</span><p>Round buttons, the segmented control track and the Try it and Know it tag.</p></div></div><div class="sw"><div class="chip" style="background:#B9B1AB"></div><div class="meta"><b>ring</b><span>#B9B1AB</span><p>The empty circle of an unselected option. Graphic only.</p></div></div></div></div><div class="group"><h3>Danger</h3><p class="use">Reset only</p><div class="swatches"><div class="sw"><div class="chip" style="background:#A8321E"></div><div class="meta"><b>danger</b><span>#A8321E</span><p>Reset only. 6.4 to 1 on bg.</p></div></div></div></div>
+
+  <h2 class="sec" id="type">Type</h2>
+  <p class="lead">One typeface, Outfit. Sizes shown at real size.</p>
+  <div class="specimens"><div class="spec"><div class="info"><b>hero</b>34px · 300 · -0.6px<br>The first open headline only.</div><div class="sample hero">Five picks a week</div></div><div class="spec"><div class="info"><b>title</b>28px · 300 · -0.4px<br>Screen titles and the title of an opened pick.</div><div class="sample title">This week</div></div><div class="spec"><div class="info"><b>pick</b>17px · 400<br>Pick titles in a list and option names.</div><div class="sample pick">Building eval systems that improve your AI product</div></div><div class="spec"><div class="info"><b>body</b>17px · 400<br>Why you, In short and other reading text.</div><div class="sample body">Deciding what a good AI answer looks like is becoming design work.</div></div><div class="spec"><div class="info"><b>button</b>17px · 500<br>Full width buttons.</div><div class="sample button">Read the article</div></div><div class="spec"><div class="info"><b>lead</b>15px · 400<br>The line under a title, chip labels and the segmented control.</div><div class="sample lead">Your role sets which kinds of reads come first.</div></div><div class="spec"><div class="info"><b>small</b>13px · 400<br>Meta lines, dates, section labels like Why you. 500 for section labels.</div><div class="sample small">AI quality · Lenny's</div></div><div class="spec"><div class="info"><b>tag</b>12px · 400<br>The Try it and Know it tag.</div><div class="sample tag">Try it</div></div><div class="spec"><div class="info"><b>tab</b>11px · 400<br>Tab labels. 500 on the current tab.</div><div class="sample tab">This week</div></div></div>
+
+  <h2 class="sec" id="scale">Spacing and shape</h2>
+  <div class="scales">
+    <div class="scale"><h3>Spacing</h3><div class="step"><b>space-1</b><span class="v">4px</span><div class="bar" style="width:4px"></div></div><div class="step"><b>space-2</b><span class="v">8px</span><div class="bar" style="width:8px"></div></div><div class="step"><b>space-3</b><span class="v">12px</span><div class="bar" style="width:12px"></div></div><div class="step"><b>space-4</b><span class="v">28px</span><div class="bar" style="width:28px"></div></div><div class="step"><b>row-pad</b><span class="v">14px</span><div class="bar" style="width:14px"></div></div><div class="step"><b>gutter</b><span class="v">28px</span><div class="bar" style="width:28px"></div></div><div class="step"><b>top</b><span class="v">64px</span><div class="bar" style="width:64px"></div></div></div>
+    <div class="scale"><h3>Radius</h3><div class="step"><b>radius-field</b><span class="v">14px</span><div class="box" style="border-radius:14px"></div></div><div class="step"><b>radius-pill</b><span class="v">999px</span><div class="box" style="border-radius:999px"></div></div></div>
+    <div class="scale"><h3>Size</h3><div class="step"><b>size-button</b><span class="v">52px</span><span class="v">Height of full width buttons.</span></div><div class="step"><b>size-option</b><span class="v">64px</span><span class="v">Smallest height of an option row.</span></div><div class="step"><b>size-chip</b><span class="v">40px</span><span class="v">Height of a topic chip.</span></div><div class="step"><b>size-round</b><span class="v">44px</span><span class="v">Round buttons like back, and the smallest tap target.</span></div><div class="step"><b>size-nav</b><span class="v">56px</span><span class="v">Height of the tab bar.</span></div></div>
+  </div>
+
+  <h2 class="sec" id="components">Components</h2>
+  <p class="lead">Each one as it appears in the app, with the rules that go with it.</p>
+  <section class="comp" id="pickrow"><div class="stage">
+<div style="font-family:var(--font-sans);background:var(--bg);color:var(--ink);padding:16px;width:340px;display:flex;flex-direction:column;gap:0"><a href="#" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)"><span style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="display:flex;align-items:center;gap:8px"><span style="font-size:13px;line-height:18px;color:var(--muted)">AI quality · Lenny's</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;line-height:16px;padding:2px 8px 2px 6px;border-radius:999px;background:var(--chip);color:var(--tag-text)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 4.5l13 7-5.5 1.8L11 19.5z"/></svg>Try it</span></span><span style="font-size:17px;line-height:23px">Building eval systems that improve your AI product</span></span><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--muted)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></a><a href="#" style="text-decoration:none;color:inherit;display:flex;align-items:center;gap:12px;padding:14px 0"><span style="flex:1;display:flex;flex-direction:column;gap:4px"><span style="display:flex;align-items:center;gap:8px"><span style="font-size:13px;line-height:18px;color:var(--muted)">Big this week · TLDR Design</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;line-height:16px;padding:2px 8px 2px 6px;border-radius:999px;background:var(--chip);color:var(--tag-text)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg>Know it</span></span><span style="font-size:17px;line-height:23px;color:var(--muted)">Figma adds code layers, motion and shaders to the canvas</span></span><svg role="img" aria-label="Read" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg></a></div>
+</div><div class="guide"><h3>Pick Row</h3><p class="lead">One of the five picks on This week.</p><ul><li>Meta line in <code>small</code> <code>muted</code>, the slot and the source joined by a middle dot, then the tag.</li><li>Title in <code>pick</code>, up to three lines.</li><li>A chevron on the right. When read, the title turns <code>muted</code> and the chevron becomes the <code>primary</code> check.</li><li>Rows are split by a <code>line</code> hairline, 14 above and below.</li></ul></div></section>
+<section class="comp" id="tag"><div class="stage">
+<div style="font-family:var(--font-sans);background:var(--bg);color:var(--ink);padding:16px;width:340px;display:flex;flex-direction:row;gap:12px"><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;line-height:16px;padding:2px 8px 2px 6px;border-radius:999px;background:var(--chip);color:var(--tag-text)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5.5 4.5l13 7-5.5 1.8L11 19.5z"/></svg>Try it</span><span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;line-height:16px;padding:2px 8px 2px 6px;border-radius:999px;background:var(--chip);color:var(--tag-text)"><svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/><circle cx="12" cy="12" r="2.5"/></svg>Know it</span></div>
+</div><div class="guide"><h3>Tag</h3><p class="lead">Try it or Know it on every pick.</p><ul><li>Both share one style, <code>chip</code> fill with <code>tag-text</code>, so neither reads as more important.</li><li>Try it has a pointer icon, Know it an eye. 12 icons, centered in the box.</li><li>Try it means something to use this week. Know it means news or context.</li></ul></div></section>
+<section class="comp" id="mainbutton"><div class="stage">
+<div style="font-family:var(--font-sans);background:var(--bg);color:var(--ink);padding:16px;width:340px;display:flex;flex-direction:column;gap:12px"><button type="button" style="height:52px;border:0;border-radius:999px;background:var(--primary);color:#fff;font-family:var(--font-sans);font-size:17px;font-weight:500">Read the article</button><button type="button" style="height:52px;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--ink);font-family:var(--font-sans);font-size:17px">Mark as read</button></div>
+</div><div class="guide"><h3>Main Button</h3><p class="lead">The one action on a screen, like Continue or Read the article.</p><ul><li><code>primary</code> fill, white text in <code>button</code>, <code>size-button</code> tall, full width, <code>radius-pill</code>.</li><li>A secondary button below it is <code>surface</code> with a <code>border</code> and <code>ink</code> text.</li></ul></div></section>
+<section class="comp" id="optionrow"><div class="stage">
+<div style="font-family:var(--font-sans);background:var(--bg);color:var(--ink);padding:16px;width:340px;display:flex;flex-direction:column;gap:0"><button type="button" role="radio" aria-checked="false" style="all:unset;min-height:64px;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line)"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:17px">Grow in my current role</span><span style="font-size:13px;color:var(--muted)">Sharper craft and methods</span></span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="none" stroke="var(--ring)" stroke-width="1.5"/></svg></button><button type="button" role="radio" aria-checked="true" style="all:unset;min-height:64px;display:flex;align-items:center;gap:12px"><span style="flex:1;display:flex;flex-direction:column;gap:2px"><span style="font-size:17px;font-weight:500">Move into AI product design</span><span style="font-size:13px;color:var(--muted)">Patterns, trust and quality for AI</span></span><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="var(--primary)"/><path d="M7.5 12.5l3 3 6-6.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+</div><div class="guide"><h3>Option Row</h3><p class="lead">One choice in Your role and Your goal.</p><ul><li>64 tall, name in <code>pick</code>, an optional hint in <code>small</code> <code>muted</code>.</li><li>A 24 circle on the right. Selected is a <code>primary</code> disc with a white check and the name in 500.</li><li>A real radio button inside a radiogroup.</li></ul></div></section>
+<section class="comp" id="topicchip"><div class="stage">
+<div style="font-family:var(--font-sans);background:var(--bg);color:var(--ink);padding:16px;width:340px;display:flex;flex-direction:row;flex-wrap:wrap;gap:12px"><button type="button" aria-pressed="true" style="height:40px;padding:0 14px 0 10px;border:0;border-radius:999px;background:var(--soft);color:var(--blue-text);font-family:var(--font-sans);font-size:15px;font-weight:500;display:inline-flex;align-items:center;gap:6px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Trust and transparency</button><button type="button" aria-pressed="false" style="height:40px;padding:0 14px 0 10px;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--ink);font-family:var(--font-sans);font-size:15px;display:inline-flex;align-items:center;gap:6px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Accessibility</button></div>
+</div><div class="guide"><h3>Topic Chip</h3><p class="lead">A topic on Your topics.</p><ul><li>40 tall in <code>lead</code>.</li><li>Selected is <code>soft</code> with <code>blue-text</code>, 500 and a check. Not selected is <code>surface</code> with a <code>border</code> and a plus.</li><li>A toggle button with aria-pressed.</li></ul></div></section>
+<section class="comp" id="tabbar"><div class="stage">
+<div style="font-family:var(--font-sans);background:var(--bg);color:var(--ink);padding:16px;width:340px;display:flex;flex-direction:column;gap:12px"><nav style="height:56px;display:flex;justify-content:space-between"><a href="#" aria-current="page" style="width:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:500;color:var(--blue-text);text-decoration:none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>This week</a><a href="#" style="width:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;color:var(--muted);text-decoration:none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="5" rx="1.5"/><path d="M5 9v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9M10 13h4"/></svg>Past weeks</a><a href="#" style="width:96px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;color:var(--muted);text-decoration:none"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg>Settings</a></nav></div>
+</div><div class="guide"><h3>Tab Bar</h3><p class="lead">Three tabs, This week, Past weeks and Settings.</p><ul><li>Flat on the ground, <code>size-nav</code> tall, no shadow.</li><li>Labels in <code>tab</code>. The current tab is <code>blue-text</code> and 500, others <code>muted</code>.</li></ul></div></section>
+
+  <h2 class="sec" id="principles">Principles</h2><div class="prose"><ol><li><b>A week has an end.</b> Five picks, a count of how many are read, and a line that says that is all. Never an endless feed.</li><li><b>Say why.</b> Every pick carries one line on why it was chosen for you. Trust in the curation comes from seeing the reason.</li><li><b>Blue means state and action.</b> Ink blue is for the main button, a selected option, a selected chip, the current tab and the read check. Never to rank content.</li><li><b>Equal tags.</b> Try it and Know it share one neutral style and differ only by icon, so neither reads as more important.</li><li><b>Same family as SaySay and Manna.</b> The in the middle direction, one warm ground, Outfit, light titles, content on the page without cards.</li></ol></div>
+<h2 class="sec" id="content">Content</h2><div class="prose"><ul><li>Plain words, sentence case, short. No colons, semicolons or dashes in UI text. A middle dot joins the slot and the source in a meta line.</li><li>English only.</li><li>Summaries and why lines come from the article text only. Never invent facts.</li></ul></div>
+<h2 class="sec" id="layout">Layout</h2><div class="prose"><ul><li>28 side margin, 64 to the title. On wide screens content centers in a 560 column.</li><li>Picks are rows on the page split by <code>line</code> hairlines. No cards.</li><li>An option row is 64 tall with the option name on the left and a 24 circle on the right. Selected is a <code>primary</code> disc with a white check.</li><li>Topic chips are 40 tall. Selected chips use <code>soft</code> with <code>blue-text</code> and a check. Others are <code>surface</code> with <code>border</code> and a plus.</li><li>One main button per screen, full width, 52 tall, at the bottom. Secondary buttons are <code>surface</code> with a <code>border</code>.</li><li>The tab bar sits flat on the ground with three tabs, This week, Past weeks and Settings.</li></ul></div>
+<h2 class="sec" id="iconography">Iconography</h2><div class="prose"><ul><li>Line icons, round caps and joins, 24 grid, 1.6 to 2 stroke.</li><li>Try it uses a pointer, Know it uses an eye, both 12 in the tag.</li><li>Every chevron is 14 in <code>muted</code>.</li></ul></div>
+<h2 class="sec" id="accessibility">Accessibility</h2><div class="prose"><ul><li>WCAG 2.2 AA. Targets at least 44.</li><li>Focus rings are 2px <code>primary</code> with a 2px gap.</li><li>Options are real radio buttons, chips are toggle buttons with aria-pressed.</li></ul></div>
+
+  <footer>Built from the design-system folder of the <a href="https://github.com/yeochoi/sift">sift</a> repository. Shares its minimal direction with the <a href="https://yeochoi.github.io/saysay/design-system/">SaySay</a> and <a href="https://yeochoi.github.io/manna/">Manna</a> designs. <a href="../">Open the app</a>.</footer>
+</main>
+</div>
+</body>
+</html>
