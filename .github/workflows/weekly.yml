@@ -25,6 +25,7 @@ jobs:
       - name: Build this week's pool
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          SIFT_TRIAGE_MODEL: ${{ vars.SIFT_TRIAGE_MODEL }}
         run: node scripts/weekly.mjs
       - name: Save it
         run: |

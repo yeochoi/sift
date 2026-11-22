@@ -13,7 +13,7 @@ const DATA = path.join(root, 'data')
 const DRY = process.argv.includes('--dry')
 const DAYS = 8
 const PER_SOURCE = 12
-const TEXT_LIMIT = { article: 900, digest: 9000 }
+const TEXT_LIMIT = { article: 900, digest: 5000 }
 
 const readJSON = (p) => JSON.parse(fs.readFileSync(path.join(DATA, p), 'utf8'))
 const { sources } = readJSON('sources.json')
@@ -121,10 +121,10 @@ async function readSource(src) {
 }
 
 // Claude
-// Stage 1, Sonnet. Short text of every post. Merge, tag, score, a one line gist, and the weekly briefing.
+// Stage 1, Haiku. Set SIFT_TRIAGE_MODEL to claude-sonnet-5-5 for sharper judgment at about twenty times the cost. Short text of every post. Merge, tag, score, a one line gist, and the weekly briefing.
 // Stage 2, Haiku. Full text of the top items only. A summary good enough to skip the article.
 // Both go through the Batch API, which costs half and is fine for a job that runs at night.
-const TRIAGE_MODEL = process.env.SIFT_TRIAGE_MODEL || 'claude-sonnet-5-5'
+const TRIAGE_MODEL = process.env.SIFT_TRIAGE_MODEL || 'claude-haiku-5-5'
 const SUMMARY_MODEL = process.env.SIFT_SUMMARY_MODEL || 'claude-haiku-5-5'
 const DETAIL_COUNT = 10
 const FULL_LIMIT = 24000
@@ -267,7 +267,11 @@ async function batch(requests, waitMinutes = 25) {
     }
     if (state.processing_status === 'ended' && state.results_url) {
       const lines = (await (await fetch(state.results_url, { headers: headers() })).text()).split('\n').filter(Boolean)
-      for (const l of lines) { const r = JSON.parse(l); if (r.result?.type === 'succeeded') out[r.custom_id] = r.result.message }
+      for (const l of lines) {
+        const r = JSON.parse(l)
+        if (r.result?.type === 'succeeded') out[r.custom_id] = r.result.message
+        else console.log(`${r.custom_id} ${r.result?.type} in batch. ${JSON.stringify(r.result?.error || '').slice(0, 200)}`)
+      }
     } else {
       await fetch(`${API}/messages/batches/${b.id}/cancel`, { method: 'POST', headers: headers() }).catch(() => {})
       console.log('Batch was slow, running the rest directly')
