@@ -19,8 +19,11 @@ const TEXT_LIMIT = { article: 1800, digest: 9000 }
 const readJSON = (p) => JSON.parse(fs.readFileSync(path.join(DATA, p), 'utf8'))
 const { sources } = readJSON('sources.json')
 const { topics } = readJSON('topics.json')
-// Urls used in earlier weeks, so pages without dates do not repeat.
-const SEEN = new Set(fs.existsSync(path.join(DATA, 'seen.json')) ? readJSON('seen.json') : [])
+const THIS_WEEK = weekId(new Date())
+// Urls used in earlier weeks, so pages without dates do not repeat. A rerun in the same week may use them again.
+const seenFile = fs.existsSync(path.join(DATA, 'seen.json')) ? readJSON('seen.json') : {}
+const SEEN_MAP = new Map(Array.isArray(seenFile) ? seenFile.map((u) => [u, THIS_WEEK]) : Object.entries(seenFile))
+const SEEN = { has: (u) => SEEN_MAP.has(u) && SEEN_MAP.get(u) !== THIS_WEEK, add: (u) => { if (!SEEN_MAP.has(u)) SEEN_MAP.set(u, THIS_WEEK) } }
 
 // ISO week id like 2026-W48, for the Monday the job runs.
 function weekId(d) {
@@ -223,6 +226,18 @@ async function main() {
     const r = await readSource(src)
     const fresh = r.items.filter((it) => (!it.date || new Date(it.date) >= since) && !SEEN.has(it.url)).slice(0, PER_SOURCE)
     status.push({ id: src.id, name: src.name, feed: r.feed, found: r.items.length, kept: fresh.length, error: r.error || null })
+    if (src.kind === 'digest') {
+      // A digest feed often has only the headlines. Read the issue page for the stories and their links.
+      for (const it of fresh) {
+        if (it.text.length > 1500) continue
+        try {
+          const html = await get(it.url)
+          const body = html.match(/<main[\s\S]*?<\/main>/i) || html.match(/<body[\s\S]*?<\/body>/i)
+          const t = toText(body ? body[0] : html)
+          if (t.length > it.text.length) it.text = t
+        } catch { /* keep the feed text */ }
+      }
+    }
     for (const it of fresh) candidates.push({ ...it, sourceId: src.id, sourceName: src.name, kind: src.kind, text: it.text.slice(0, TEXT_LIMIT[src.kind] || 1800) })
   }
   console.table(status.map(({ id, kept, found, error }) => ({ id, kept, found, error: error ? error.slice(0, 80) : '' })))
@@ -238,7 +253,7 @@ async function main() {
   fs.writeFileSync(path.join(DATA, 'latest.json'), JSON.stringify(out, null, 1))
   const weeks = fs.readdirSync(path.join(DATA, 'weeks')).filter((f) => /^\d{4}-W\d\d\.json$/.test(f)).map((f) => f.replace('.json', '')).sort().reverse()
   for (const c of candidates) SEEN.add(c.url)
-  fs.writeFileSync(path.join(DATA, 'seen.json'), JSON.stringify([...SEEN].slice(-3000)))
+  fs.writeFileSync(path.join(DATA, 'seen.json'), JSON.stringify(Object.fromEntries([...SEEN_MAP].slice(-3000))))
   fs.writeFileSync(path.join(DATA, 'index.json'), JSON.stringify({ latest: week, weeks }, null, 1))
   console.log(`${week}: ${pool.length} items from ${candidates.length} posts`)
 }
