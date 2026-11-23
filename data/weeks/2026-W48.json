@@ -1,0 +1,649 @@
+{
+ "week": "2026-W48",
+ "created": "2026-11-23T14:38:35.308Z",
+ "model": {
+  "triage": "claude-haiku-5-5",
+  "summary": "claude-haiku-5-5"
+ },
+ "sample": false,
+ "brief": "This week's design and AI reading centres on agents moving from demos into daily work. Practitioners are writing practical guides on how to write agent skills, and a CTO shows how a personal agent handles approvals and small chores, with guardrails and subagents doing the heavy lifting. Google Labs' Stitch Loop points the same way, an agent that watches live metrics and proposes fixes that wait for human approval. At the same time, commentary warns that AI has made generation fast but has left designers with tighter deadlines and more options to review, so the productivity gains are not always felt. Designers and PMs should treat agent oversight, approval steps and evaluation as core design work this week.",
+ "sources": [
+  {
+   "id": "nng",
+   "name": "NN/g",
+   "feed": "https://www.nngroup.com/feed/rss/",
+   "found": 20,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "smashing",
+   "name": "Smashing Magazine",
+   "feed": "https://www.smashingmagazine.com/feed/",
+   "found": 40,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "uxcollective",
+   "name": "UX Collective",
+   "feed": "https://uxdesign.cc/feed",
+   "found": 10,
+   "kept": 4,
+   "error": null
+  },
+  {
+   "id": "lenny",
+   "name": "Lenny's Newsletter",
+   "feed": "https://www.lennysnewsletter.com/feed",
+   "found": 20,
+   "kept": 1,
+   "error": null
+  },
+  {
+   "id": "nielsen",
+   "name": "Jakob Nielsen",
+   "feed": "https://www.uxtigers.com/blog-feed.xml",
+   "found": 20,
+   "kept": 1,
+   "error": null
+  },
+  {
+   "id": "lukew",
+   "name": "Luke Wroblewski",
+   "feed": "https://www.lukew.com/ff/rss.xml",
+   "found": 15,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "pair",
+   "name": "Google PAIR",
+   "feed": "https://medium.com/feed/people-ai-research",
+   "found": 10,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "adobe",
+   "name": "Adobe Design",
+   "feed": null,
+   "found": 0,
+   "kept": 0,
+   "error": "404 https://adobe.design/rss.xml | 404 https://adobe.design/feed.xml | no new article links on home"
+  },
+  {
+   "id": "hamel",
+   "name": "Hamel Husain",
+   "feed": "https://hamel.dev/index.xml",
+   "found": 20,
+   "kept": 0,
+   "error": null
+  },
+  {
+   "id": "skift",
+   "name": "Skift",
+   "feed": "https://skift.com/feed/",
+   "found": 10,
+   "kept": 8,
+   "error": null
+  },
+  {
+   "id": "lyssna",
+   "name": "Lyssna",
+   "feed": "page https://www.lyssna.com/blog/",
+   "found": 6,
+   "kept": 6,
+   "error": null
+  },
+  {
+   "id": "tldr-design",
+   "name": "TLDR Design",
+   "feed": "https://tldr.tech/api/rss/design",
+   "found": 20,
+   "kept": 1,
+   "error": null
+  },
+  {
+   "id": "tldr-ai",
+   "name": "TLDR AI",
+   "feed": "https://tldr.tech/api/rss/ai",
+   "found": 20,
+   "kept": 1,
+   "error": null
+  }
+ ],
+ "usage": {
+  "claude-haiku-5-5 batch": {
+   "input_tokens": 54363,
+   "output_tokens": 10513
+  }
+ },
+ "items": [
+  {
+   "id": "01-how-to-write-great-agent-skills",
+   "title": "How to write great agent skills",
+   "url": "https://uxdesign.cc/how-to-write-great-skills-91635bc45ada?source=rss----138adf9c44c---4",
+   "source": "UX Collective",
+   "published": "2026-11-22",
+   "topics": [
+    "ai-interaction",
+    "ai-prototyping"
+   ],
+   "kind": "try",
+   "gist": "A practical guide to writing agent skills, drawing on several respected practitioners and Anthropic.",
+   "summary": [
+    "Covers advanced and practical guidance for agent skills",
+    "Draws on Matt Pocock, Nate Herk, Addy Osmani and Anthropic",
+    "Useful for designers shaping how agents are instructed"
+   ],
+   "why": {
+    "ai-interaction": "Agent skills define what an assistant can do, so writing them well shapes the user experience directly.",
+    "general": "A concrete, current method for anyone building with AI agents this week."
+   },
+   "importance": 4,
+   "practical": 5,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "02-running-a-personal-agent-with-approvals",
+   "title": "Running a personal agent with approvals and guardrails",
+   "url": "https://www.lennysnewsletter.com/p/openclaw-for-executives-automate",
+   "source": "Lenny's Newsletter",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-interaction",
+    "trust"
+   ],
+   "kind": "know",
+   "gist": "A CTO describes a personal agent that handles approvals, calls and errands, and the guardrails that make it trustworthy.",
+   "summary": [
+    "Started with approvals that were slowing down his work",
+    "Split voice calling into its own subagent",
+    "Relies on soul files and guardrails to stay trustworthy"
+   ],
+   "why": {
+    "ai-interaction": "Shows how people really delegate multi-step tasks to agents and where they want control.",
+    "general": "A real case of agent use that surfaces trust and control questions for product teams."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Starting point was approvals",
+      "text": "Ankit Maheshwari, CTO of Innovaccer, began running OpenClaw on a Mac Mini because work approvals were making him the bottleneck. The episode description says the system then grew to handle lunch ordering, calling coworkers who do not reply on Slack, restaurant reservations, and switching on the AC before he gets home. The article covers his soul files, guardrails, a separate voice-calling subagent, and whether a local model like GLM 5.3 Flash could replace a $500 to $600 a month Anthropic bill."
+     },
+     {
+      "head": "Soul files and subagents",
+      "text": "Instead of one global agent, he splits work into well-scoped subagents, each with its own role, such as a health coach, email triage, and a master soul that sets shared behaviour. The article notes that one global agent hallucinated personas, and that scoping each subagent fixed this and beat a single agent for everything. Voice calling was split out into its own subagent."
+     },
+     {
+      "head": "Guardrails and the mid-flight test",
+      "text": "The article covers a mid-flight moment that tested his guardrails and explains how the guardrails make the system trustworthy enough to act on his behalf. He treats the agent much like a new hire he talks to in plain terms. The 1 percent annoyance rule is a principle for deciding which small frictions are worth automating."
+     },
+     {
+      "head": "Real tasks and cost trade-off",
+      "text": "Jarvis handles food ordering, travel and restaurant bookings through tools such as Navan and DoorDash Meal Manager, and controls his smart home. It calls people who do not answer on Slack, using voice tooling such as Bland AI, ElevenLabs and Twilio. He is pressure-testing whether a local model, GLM 5.3 Flash, can cut his cloud bill, and the article looks at what that model can and cannot do."
+     }
+    ],
+    "takeaway": "Build approvals and notifications so that a single pending decision does not stall a chain of dependent actions, and scope each AI assistant to one narrow job with explicit guardrails rather than one general agent. Test whether a cheaper local model can handle the routine tasks before paying for a frontier model on everything."
+   },
+   "importance": 3,
+   "practical": 4,
+   "roles": [
+    "pm",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "03-ai-does-not-hesitate-and-designers-lose",
+   "title": "AI does not hesitate, and designers lose friction",
+   "url": "https://uxdesign.cc/decision-theater-human-md-what-is-a-researchers-worth-d7687978bd26?source=rss----138adf9c44c---4",
+   "source": "UX Collective",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-interaction",
+    "research"
+   ],
+   "kind": "know",
+   "gist": "An essay argues that conversing with a machine removes the friction of hesitation that human exchanges carry.",
+   "summary": [
+    "Machines answer without searching for words or bracing",
+    "Human hesitation carries meaning in conversation",
+    "Raises questions for researchers studying AI interactions"
+   ],
+   "why": {
+    "ai-interaction": "Points at a design gap, since frictionless answers can remove the pauses that help people think.",
+    "general": "A reflective read for researchers weighing what AI conversation loses."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "AI answers without hesitation",
+      "text": "The newsletter opens with the idea that talking to a machine has no built-in friction. It does not search for words, worry about how a question will land, or brace for how an answer will be received. It simply responds. The piece is titled around the discipline of hesitation and is linked from the edition's first item."
+     },
+     {
+      "head": "Friction is becoming scarce",
+      "text": "A researcher career piece argues that effortless AI makes human friction the scarcest asset. The implication is that the pauses, uncertainty and effort people bring to a task are growing more valuable as machines remove them. The roundup frames this as a question of what a researcher's worth really is."
+     },
+     {
+      "head": "Tools need judgment to match",
+      "text": "One linked essay, In making things, we make ourselves, says better technology alone is not enough and that access to powerful tools is not the same as knowing how to use them well. As tools advance, the skills and judgment of their users must be cultivated too. A related quote notes that the pace of change keeps increasing and that long-honed senses for deciding what comes next feel dulled."
+     },
+     {
+      "head": "Other pieces in the roundup",
+      "text": "The edition also lists AI as a new old design material, which treats models as the next material, and decision design, which moves from building knowledge to owning decisions. It includes a short game about craft and impermanence, a skateboarding piece on everyone having the tools but not the tricks, and a note on why design may answer the value of software. Most items are brief teasers with one-line descriptions and no detailed evidence."
+     }
+    ],
+    "takeaway": "Treat hesitation and friction as deliberate design features rather than defects to remove, since they may carry human judgment and value. Also invest in helping users build the skill and judgment to use powerful AI tools well, not just in making the tools more capable."
+   },
+   "importance": 2,
+   "practical": 2,
+   "roles": [
+    "researcher",
+    "lead"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "04-ai-is-the-new-old-design-material",
+   "title": "AI is the new old design material",
+   "url": "https://uxdesign.cc/ai-is-the-new-old-design-material-0e7f83540c9a",
+   "source": "UX Collective",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-interaction"
+   ],
+   "kind": "know",
+   "gist": "An essay argues that AI models are becoming the next design material that teams must learn to shape.",
+   "summary": [
+    "Frames models as a design material like any other",
+    "Suggests designers must learn the material's behaviour",
+    "Linked as an editor pick this week"
+   ],
+   "why": {
+    "ai-interaction": "Treating models as material changes how designers approach AI features.",
+    "general": "A useful framing for leads planning AI product work."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Conversation with machines has no friction",
+      "text": "The newsletter opens with a quote from The Discipline of Hesitation: talking to a machine involves no built-in friction. It does not hesitate, search for words, worry about how a question will land, or brace for a reaction. It just answers."
+     },
+     {
+      "head": "AI as a new design material",
+      "text": "The featured piece, AI is the new old design material by Patrick Neeman, argues that models are the next material for designers to work with. The text given here offers only this one-line framing, so the full argument is not available in this summary."
+     },
+     {
+      "head": "From building knowledge to owning decisions",
+      "text": "Patrizia Bertini's Decision theatre or decision design? contrasts building knowledge with owning decisions. The newsletter gives only this short framing, with no further detail on her method or examples."
+     },
+     {
+      "head": "Design as the answer to software costs",
+      "text": "Ed Orozco's Why bother paying for software anymore? claims design is the answer AI enthusiasts did not expect. The excerpt gives no supporting evidence or examples."
+     },
+     {
+      "head": "Craft, judgment and fading instincts",
+      "text": "Several linked pieces raise the same concern. Better technology alone is not enough, since access to powerful tools is not the same as using them well, so the skills and judgment of users must grow alongside the tools. One writer also reports that the pace of change keeps rising and that the senses they had honed for predicting what comes next now feel dulled."
+     },
+     {
+      "head": "Human friction as a scarce asset",
+      "text": "In What is a researcher's worth?, Matt Rafalow argues that effortless AI makes human friction the scarcest asset. Other short pieces include a game about impermanence and craft, a skateboarding analogy that everyone has the tools but not the tricks, and a question about why people commute to watch AI work."
+     }
+    ],
+    "takeaway": "Treat friction and human judgment as deliberate design features rather than defects to remove, since effortless AI interaction may make those qualities scarce. Consider how a product can keep users' skills and decision-making engaged, not just deliver fast answers."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "lead",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "05-google-labs-stitch-loop-keeps-products-i",
+   "title": "Google Labs' Stitch Loop keeps products improving after launch",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/?utm_source=tldrdesign",
+   "source": "Google Labs",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-prototyping",
+    "ai-interaction"
+   ],
+   "kind": "know",
+   "gist": "Stitch Loop is an agent that connects to code and live metrics, proposes fixes, and waits for human approval.",
+   "summary": [
+    "Suggests fixes and opens GitHub pull requests for review",
+    "Nothing merges until a person approves the change",
+    "Built-in loops cover security, latency and accessibility"
+   ],
+   "why": {
+    "ai-prototyping": "Shows AI tools moving from generating screens to maintaining products after launch.",
+    "general": "A clear example of human approval built into an agent workflow."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "What Stitch Loop is",
+      "text": "Stitch Loop is a long-running product agent from Google Labs that connects to a product's codebase and live metrics. Its job is to keep improving software after it has launched rather than stopping at release. It is presented as a new way to build and evolve products."
+     },
+     {
+      "head": "How it works",
+      "text": "The agent suggests fixes, writes the code in a cloud sandbox, and opens GitHub pull requests. Nothing merges on its own, because a person must approve each change before it goes in. This keeps a human in control of what reaches the live product."
+     },
+     {
+      "head": "Built-in improvement loops",
+      "text": "Stitch Loop ships with ready-made loops for security, latency, and accessibility. These run continuously against the product, so the agent looks after those concerns over time."
+     },
+     {
+      "head": "Availability",
+      "text": "A global waitlist is open. Eligible Google AI Ultra users get priority access."
+     }
+    ],
+    "takeaway": "Treat post-launch quality as an ongoing loop that a product agent can run, with human approval gating every change. For designers, the built-in accessibility loop is a concrete reason to check how automated fixes affect interface behaviour before approving them."
+   },
+   "importance": 4,
+   "practical": 3,
+   "roles": [
+    "pm",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "06-google-play-will-require-foldable-ready",
+   "title": "Google Play will require foldable-ready apps from April 2027",
+   "url": "https://www.digitaltrends.com/phones/google-play-will-require-foldable-ready-apps-starting-in-april-2027/?utm_source=tldrdesign",
+   "source": "Digital Trends",
+   "published": "2026-11-23",
+   "topics": [
+    "craft",
+    "industry"
+   ],
+   "kind": "know",
+   "gist": "Google Play sets baseline foldable standards, including filling the screen, preserving activity and supporting multi-window.",
+   "summary": [
+    "Apps must fill the screen without letterboxing",
+    "Must keep user activity when devices fold or rotate",
+    "Developers must supply foldable screenshots"
+   ],
+   "why": {
+    "craft": "Responsive layout across device postures is becoming a platform requirement, not an option.",
+    "general": "A dated deadline that affects any team shipping Android apps."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Foldable compliance becomes mandatory on Google Play",
+      "text": "From April 2027, Google Play will require Android apps to meet baseline foldable compatibility standards. Apps that do not comply could lose the ability to publish updates. This is a publishing gate, not just a recommendation."
+     },
+     {
+      "head": "Baseline requirements",
+      "text": "Apps must fill the available screen without letterboxing, keep the user's activity intact when a device folds or rotates, and support multi-window operation. Developers must also supply foldable screenshots as part of their listing."
+     },
+     {
+      "head": "Advanced guidelines",
+      "text": "More advanced guidance encourages responsive multi-pane layouts, support for external input devices, and interfaces that adapt to different device postures, such as a half-open fold. These are framed as encouraged rather than required."
+     }
+    ],
+    "takeaway": "Audit key screens for letterboxing, state preservation on fold and rotate, and multi-window behaviour well before April 2027, and plan responsive multi-pane layouts for tablet and foldable sizes. Budget time to produce foldable screenshots for store listings."
+   },
+   "importance": 3,
+   "practical": 4,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "07-designing-enterprise-dashboards-around-e",
+   "title": "Designing enterprise dashboards around exceptions",
+   "url": "https://uxdesign.cc/send-the-firefighters-to-the-fires-6cd7b1893ae7?utm_source=tldrdesign",
+   "source": "UX Collective",
+   "published": "2026-11-23",
+   "topics": [
+    "craft",
+    "product-strategy"
+   ],
+   "kind": "try",
+   "gist": "Enterprise interfaces should surface abnormal conditions first, using management by exception rather than full tables.",
+   "summary": [
+    "Urgent problems often hide inside huge tables",
+    "Prioritise abnormal conditions and actionable issues",
+    "Reduces cognitive load and speeds problem resolution"
+   ],
+   "why": {
+    "craft": "Gives a concrete pattern for dashboard layout that lowers the effort of finding what needs attention.",
+    "general": "A practical principle that applies to any operational software."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Urgent problems get buried in enterprise interfaces",
+      "text": "Enterprise screens often bury urgent issues inside huge tables, so users have to search through hundreds of records to find what needs attention. The article argues the dashboard should surface the problems first rather than making people hunt for them."
+     },
+     {
+      "head": "Management by exception as the guiding principle",
+      "text": "The principle of management by exception is more than a century old. It says operational software should prioritise abnormal conditions and actionable issues, while healthy systems stay in the background."
+     },
+     {
+      "head": "Benefits of designing around exceptions",
+      "text": "Designing around exceptions rather than exhaustive inventories is said to reduce cognitive load and speed up problem resolution. The result is a dashboard that is more useful to the people responsible for fixing things."
+     },
+     {
+      "head": "Limits of the digest summary",
+      "text": "The digest gives only a brief overview of this 13-minute article. It does not include the article's specific examples, worked dashboard patterns, or detailed method, so those are not covered here."
+     }
+    ],
+    "takeaway": "Start enterprise dashboards with the items that need action, such as abnormal or overdue records, and push healthy status into the background. Test whether a user can find the urgent problem in a few seconds without scrolling through full tables."
+   },
+   "importance": 3,
+   "practical": 5,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "08-ai-made-designers-faster-but-gave-them-l",
+   "title": "AI made designers faster but gave them less time",
+   "url": "https://hackernoon.com/ai-made-us-faster-so-why-do-designers-have-less-time?utm_source=tldrdesign",
+   "source": "HackerNoon",
+   "published": "2026-11-23",
+   "topics": [
+    "leadership",
+    "growth"
+   ],
+   "kind": "know",
+   "gist": "Faster AI generation has brought shorter deadlines and more revisions, and perceived speed can differ from real speed.",
+   "summary": [
+    "Generation is fast but review and revisions multiply",
+    "Cites a 2025 METR study on perceived versus actual speed",
+    "Deadlines have tightened for many designers"
+   ],
+   "why": {
+    "leadership": "Team leads need to plan capacity around review work that AI creates.",
+    "general": "Sheds light on the gap between perceived and measured productivity."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "AI cut generation time but added work",
+      "text": "AI has sharply reduced the time it takes to produce creative work, yet designers often face tighter deadlines, more revision rounds, and a flood of options to assess. The gain in speed has been eaten by the extra evaluation and review that follows."
+     },
+     {
+      "head": "Feeling faster is not the same as being faster",
+      "text": "A 2025 study by METR found that experienced developers took 19% longer to finish tasks using early-2025 AI tools, even though they believed they were working faster. The gap between perceived and actual productivity is the core warning in the piece."
+     },
+     {
+      "head": "Bolting AI onto old workflows is the problem",
+      "text": "Much of the trouble comes from adding AI to workflows that were left unchanged. Saving real time requires deliberate constraints, faster ways of choosing between options, and stronger design fundamentals."
+     }
+    ],
+    "takeaway": "Redesign the workflow around AI rather than just inserting it, by setting limits on how many options are produced and building quick selection methods. Measure actual cycle time and review load, not just how fast drafts appear."
+   },
+   "importance": 4,
+   "practical": 3,
+   "roles": [
+    "lead",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "09-jakob-nielsen-s-roundup-on-ux-and-ai",
+   "title": "Jakob Nielsen's roundup on UX and AI",
+   "url": "https://www.uxtigers.com/post/ux-roundup-20261123",
+   "source": "Nielsen Norman Group",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-quality",
+    "industry"
+   ],
+   "kind": "know",
+   "gist": "Nielsen notes AI trails coding by about a year on hard-to-verify work like UX but improves just as fast.",
+   "summary": [
+    "AI lags coding by about a year on UX-type work",
+    "Argues agents may remove the need to operate single features",
+    "Notes paid AI subscriptions save time versus a degree"
+   ],
+   "why": {
+    "ai-quality": "Hard-to-verify work like UX is where evaluation is least obvious.",
+    "general": "A weekly signal on where AI and UX are heading."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "AI improves on hard-to-verify work at the same pace",
+      "text": "METR data shows AI's time horizon doubles roughly every 3.6 months across technical tasks. Easy-to-verify tasks such as coding double every 3.8 months and hard-to-verify tasks such as UX and product management every 3.4 months, a difference the author treats as a tie. Hard tasks lag by about 5 months because verification is slower, so fewer training rounds are possible."
+     },
+     {
+      "head": "Verification is the bottleneck",
+      "text": "AI labs train with reinforcement learning, where automated graders reward successes. Code passes tests in seconds, while UX quality only shows when real users respond, often weeks later, and product strategy is judged by the market months or a year later with confounding factors. The slower the verdict, the fewer practice rounds AI receives."
+     },
+     {
+      "head": "UX is about a year behind developers",
+      "text": "The author estimates the lag at about 5 months from the data, adds about 4.6 months for an assumed extra doubling of verification cost, and rounds up to roughly one year. Developers already delegate tasks of nearly two working weeks to agents and now spend more time reviewing than typing, so UX designers, usability analysts and product managers should expect a similar shift by late 2027."
+     },
+     {
+      "head": "Use the lag to prepare",
+      "text": "The author suggests studying developers to see what they delegate and how they review agent output, and making UX quality easier to verify with machine-checkable rules, automated accessibility checks, analytics and fast user testing. He estimates that predicting usability with AI needs 10,000 to 100,000 hours of annotated user sessions, which someone must collect."
+     },
+     {
+      "head": "Agents change feature discovery",
+      "text": "Users have never reliably found features, a problem known as the paradox of the active user, and Pendo found 80% of features are rarely or never used. Agents that read all documentation and act on user goals remove two of three discovery layers, but the blank prompt box makes it harder for users to know what is possible. Trust grows as agents prove reliable on small tasks before larger ones are delegated."
+     },
+     {
+      "head": "Eight guidelines for human users",
+      "text": "Promote features at moments of need, especially when users do something the hard way. Let users pull promotions via a What's new entry point, since users finished 64% of self-started tours but only 22% of 5-step tours. Show at most one dismissible promotion per session, keep the core flow uncluttered with clearly named doors instead of generic sparkle icons, label shared results with the feature that made them, map users' everyday search words to features, and recommend features used by similar users, which Autodesk research found produced 2.1 times as many good recommendations."
+     }
+    ],
+    "takeaway": "Expect AI to reach UX-specific work about a year after it reaches developers, so start by studying how engineers delegate to agents and by making design quality easier to verify. For feature discovery, prepare for agents that act on user goals, but for human users, promote features at moments of need, let users pull them, and name features in plain words."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "lead",
+    "researcher"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "10-lessons-from-3d-scanning-a-unesco-cathed",
+   "title": "Lessons from 3D scanning a UNESCO cathedral",
+   "url": "https://uxdesign.cc/lessons-from-3d-scanning-st-johns-co-cathedral-700911d61cfe?source=rss----138adf9c44c---4",
+   "source": "UX Collective",
+   "published": "2026-11-22",
+   "topics": [
+    "industry"
+   ],
+   "kind": "know",
+   "gist": "A team digitised St John's Co-Cathedral and found where photogrammetry works and where it struggles.",
+   "summary": [
+    "Used 99,000 photographs and 43 laser scans",
+    "Compared photogrammetry with Gaussian splatting",
+    "Shows limits of capture for gold, marble and fabric"
+   ],
+   "why": {
+    "industry": "Useful context on capture technology limits, though a niche topic for most product teams.",
+    "general": "A detailed case study on digital capture."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Seven nights of evening-only capture",
+      "text": "The team digitised St John's Co-Cathedral in Valletta, a UNESCO site with two Caravaggio paintings, during seven evening sessions from 7 pm, because the building is open to about 3,000 visitors a day and holds daily Mass. The capture used 99,000 photographs from Canon R5 DSLRs, a DJI Mavic 3 Pro drone flown manually at 3 to 15 metres, and 43 Faro Focus M70 LiDAR scans. Processing took about three months and 2.18 TB of data."
+     },
+     {
+      "head": "Adapted capture method for a confined space",
+      "text": "Classic photogrammetry needs circling an object from all sides, which the nave and chapels do not allow. The team shot wide first, then moved closer, and shot each chapel from outside its entrance to keep alignment with the nave. Sharp focus was prioritised over clean ISO because missing detail cannot be rebuilt later, while grain can be removed in post-processing."
+     },
+     {
+      "head": "Shiny gold and dark marble break the method",
+      "text": "Photogrammetry assumes a surface looks the same from every angle, which gilding, bronze and dark polished marble violate because their highlights move with the camera. The team flattened the contrast of images shot at high ISO, which added heavy grain, then denoised them with Adobe's AI tool. Denoising the 99,000 images took about a month, and the tool struggled with batches over 2,000 photos."
+     },
+     {
+      "head": "Manual work where software failed",
+      "text": "The software could not tell a 400-year-old column from chairs or a scaffolding pole, so all 43 LiDAR scans were cleaned by hand. Denoising had also smoothed away detail the aligner needed, so 108 control points were placed manually. This produced 98.6% of images in one aligned component, with 91,721 of 93,066 images registered and a mean reprojection error of 0.26 pixels."
+     },
+     {
+      "head": "Tapestries and the Zondadari monument remained weak",
+      "text": "The 29 Flemish tapestries, up to about 6 by 6 metres, moved with air currents in the nave, which blurred faces in the first model. The fix was photographing them flat during conservation and reprojecting onto smoothed meshes. The dark, reflective, curved marble of the Zondadari monument still shows artefacts, so the team applied artificial lighting to it and plans to handle such monuments individually in future scans."
+     },
+     {
+      "head": "Scale, accuracy and use of the archive",
+      "text": "Each chapel was reconstructed separately and combined, with the altar split into nine overlapping pieces, giving roughly one billion triangles per room and 25 to 30 billion overall. LiDAR mean point error was 1.3 mm across all scans and 0.9 mm across the 28 core nave scans. The archive is intended for disaster recovery, as the Notre-Dame example shows, for conservation planning, virtual tourism and scholarly research. Gaussian splatting kept gilded reflections in one chapel but dissolved at close range, so it serves as a companion to the mesh rather than a replacement."
+     },
+     {
+      "head": "Known limits of the model",
+      "text": "The model records geometry and colour at one moment, not material properties such as hardness, and movable items were removed or moved during processing, so it does not show the building in use. Periodic rescanning would be needed to track conservation change. The public cannot access the model yet, but the Foundation and team are working on a next phase."
+     }
+    ],
+    "takeaway": "Treat reflective and fabric surfaces as known failure modes: plan controlled lighting, flat or matte capture conditions, and manual fallbacks for alignment and cleanup. Expect that a 3D model shows geometry and appearance at one point in time, so design any interface around the user's need, such as conservation tracking or virtual visits, rather than assuming it captures how a space behaves."
+   },
+   "importance": 2,
+   "practical": 2,
+   "roles": [
+    "researcher"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "11-seven-things-ai-killed-while-measuring-p",
+   "title": "Seven things AI killed while measuring productivity",
+   "url": "https://uxdesign.cc/seven-things-ai-killed-while-you-were-measuring-productivity-b4499232ac3d?source=rss----138adf9c44c---4",
+   "source": "UX Collective",
+   "published": "2026-11-22",
+   "topics": [
+    "leadership",
+    "growth"
+   ],
+   "kind": "know",
+   "gist": "An essay argues that most executives see no AI impact because they measure the wrong things.",
+   "summary": [
+    "Reports that 80% of executives see no AI impact",
+    "Argues leaders are looking in the wrong place",
+    "Lists things AI has quietly removed from work"
+   ],
+   "why": {
+    "leadership": "Challenges how leaders measure the value of AI investments.",
+    "general": "Prompts a rethink of productivity metrics."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "lead",
+    "pm"
+   ],
+   "mentions": 1
+  }
+ ]
+}

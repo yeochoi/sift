@@ -1,19 +1,19 @@
 {
- "week": "2026-W47",
- "created": "2026-11-22T15:34:04.928Z",
+ "week": "2026-W48",
+ "created": "2026-11-23T14:38:35.308Z",
  "model": {
-  "triage": "claude-sonnet-5-5",
+  "triage": "claude-haiku-5-5",
   "summary": "claude-haiku-5-5"
  },
  "sample": false,
- "brief": "AI is making design and build faster, and this week's best pieces ask what has to stay human. NN/g found that AI produced better interfaces from synthesized research and recommendations than from raw user comments, while Level Access found that testing has not sped up the way design and development have. Designers are also building throwaway playgrounds and working prototypes with coding agents, which pushes review and handoff problems onto engineers. Meanwhile agents are starting to shop and act for people, through ChatGPT Wallet, WebMCP and Sabre's booking plans, and teams are being pushed to design the trust, permission and pricing moments that come with that.",
+ "brief": "This week's design and AI reading centres on agents moving from demos into daily work. Practitioners are writing practical guides on how to write agent skills, and a CTO shows how a personal agent handles approvals and small chores, with guardrails and subagents doing the heavy lifting. Google Labs' Stitch Loop points the same way, an agent that watches live metrics and proposes fixes that wait for human approval. At the same time, commentary warns that AI has made generation fast but has left designers with tighter deadlines and more options to review, so the productivity gains are not always felt. Designers and PMs should treat agent oversight, approval steps and evaluation as core design work this week.",
  "sources": [
   {
    "id": "nng",
    "name": "NN/g",
    "feed": "https://www.nngroup.com/feed/rss/",
    "found": 20,
-   "kept": 4,
+   "kept": 0,
    "error": null
   },
   {
@@ -21,7 +21,7 @@
    "name": "Smashing Magazine",
    "feed": "https://www.smashingmagazine.com/feed/",
    "found": 40,
-   "kept": 2,
+   "kept": 0,
    "error": null
   },
   {
@@ -29,7 +29,7 @@
    "name": "UX Collective",
    "feed": "https://uxdesign.cc/feed",
    "found": 10,
-   "kept": 10,
+   "kept": 4,
    "error": null
   },
   {
@@ -37,7 +37,7 @@
    "name": "Lenny's Newsletter",
    "feed": "https://www.lennysnewsletter.com/feed",
    "found": 20,
-   "kept": 7,
+   "kept": 1,
    "error": null
   },
   {
@@ -45,7 +45,7 @@
    "name": "Jakob Nielsen",
    "feed": "https://www.uxtigers.com/blog-feed.xml",
    "found": 20,
-   "kept": 3,
+   "kept": 1,
    "error": null
   },
   {
@@ -53,7 +53,7 @@
    "name": "Luke Wroblewski",
    "feed": "https://www.lukew.com/ff/rss.xml",
    "found": 15,
-   "kept": 2,
+   "kept": 0,
    "error": null
   },
   {
@@ -67,10 +67,10 @@
   {
    "id": "adobe",
    "name": "Adobe Design",
-   "feed": "page https://adobe.design/",
-   "found": 1,
-   "kept": 1,
-   "error": null
+   "feed": null,
+   "found": 0,
+   "kept": 0,
+   "error": "404 https://adobe.design/rss.xml | 404 https://adobe.design/feed.xml | no new article links on home"
   },
   {
    "id": "hamel",
@@ -85,7 +85,7 @@
    "name": "Skift",
    "feed": "https://skift.com/feed/",
    "found": 10,
-   "kept": 10,
+   "kept": 8,
    "error": null
   },
   {
@@ -101,7 +101,7 @@
    "name": "TLDR Design",
    "feed": "https://tldr.tech/api/rss/design",
    "found": 20,
-   "kept": 5,
+   "kept": 1,
    "error": null
   },
   {
@@ -109,557 +109,290 @@
    "name": "TLDR AI",
    "feed": "https://tldr.tech/api/rss/ai",
    "found": 20,
-   "kept": 5,
+   "kept": 1,
    "error": null
   }
  ],
  "usage": {
-  "claude-sonnet-5-5": {
-   "input_tokens": 48406,
-   "output_tokens": 12570
-  },
   "claude-haiku-5-5 batch": {
-   "input_tokens": 44520,
-   "output_tokens": 8038
+   "input_tokens": 54363,
+   "output_tokens": 10513
   }
  },
  "items": [
   {
-   "id": "01-ai-designs-improve-when-it-gets-synthesi",
-   "title": "AI designs improve when it gets synthesized research",
-   "url": "https://www.nngroup.com/articles/raw-data-vs-synthesized-data/",
-   "source": "NN/g",
-   "published": "2026-11-20",
-   "topics": [
-    "ai-prototyping",
-    "research"
-   ],
-   "kind": "know",
-   "gist": "NN/g tested whether AI designs better from raw user comments or from synthesized findings and recommendations, and the synthesized input won.",
-   "summary": [
-    "Two design tasks included a one page form for rebooking a canceled flight.",
-    "AI produced better interfaces from synthesized findings and recommendations.",
-    "Raw user comments alone gave weaker results."
-   ],
-   "why": {
-    "ai-prototyping": "It suggests research synthesis still matters before you hand context to an AI that generates prototypes.",
-    "general": "Teams tempted to skip analysis and feed raw data to AI now have evidence that synthesis improves the output."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "Synthesized research beat raw comments",
-      "text": "NN/g gave an AI model two design tasks, a one-page form for rebooking a canceled flight and a multistep online checkout flow. It was given either about 100 raw user comments per task or synthesized findings and recommendations built from those same comments by a researcher. Eight designs were generated per task and condition, then scored against a scorecard of criteria, such as showing the items being bought on every checkout step."
-     },
-     {
-      "head": "Measured gain was 8.4 points on average",
-      "text": "Across both tasks, designs from synthesized research met 8.4 percentage points more criteria on average, a statistically significant difference (p < 0.001). The gain was 11.4 points for flight rebooking and 5.5 points for checkout. A human grader's scores were used, and an LLM judge agreed with them on about 96% of decisions after calibration."
-     },
-     {
-      "head": "Concrete examples of the difference",
-      "text": "In flight rebooking, no raw-comment design showed whether the cancellation would affect loyalty miles, while every synthesized-research design did. In checkout, users complained that items disappeared from the cart, yet fewer than half of the raw-data designs kept items and totals visible on every step, compared with nearly all synthesized designs. The smaller checkout gain likely happened because the prompt already flagged discounts and delivery timing, so raw-data designs covered those issues anyway."
-     },
-     {
-      "head": "Why the gain may be understated",
-      "text": "The authors think the benefit could be larger with messier, bigger datasets and less familiar problems. Their comments were unusually useful, with over half supporting a finding, while app-store reviews research found only about a third useful. The dataset was small, and both tasks are common patterns that AI models have likely seen many times."
-     },
-     {
-      "head": "Raw data gives problems, not solutions",
-      "text": "Raw comments describe what went wrong but seldom say what to build, and users are poor at predicting their own future behavior and often say things that differ from what they do. Raw data is also messy, with off-topic and contradictory comments. AI struggles to weigh feedback against business needs, technical limits and goals, and a researcher's interpretation supplies that judgment."
-     },
-     {
-      "head": "Open questions and the bigger point",
-      "text": "The study did not separate the effect of findings from the effect of recommendations, and it did not test interview transcripts, usability notes, surveys, other AI models or file formats. The authors argue that research now serves two audiences, teammates and AI tools, so UX teams should curate the UX knowledge given to AI, which they call UX-context design. Deciding which user problems matter stays a core UX job whether people or AI produce the design."
-     }
-    ],
-    "takeaway": "Before handing research to an AI design tool, turn raw feedback into explicit findings and recommendations that weigh user problems against business and technical constraints. Treat that synthesized context as a deliberate deliverable, and check that it covers important edge cases such as loyalty benefits or cart visibility."
-   },
-   "importance": 5,
-   "practical": 5,
-   "roles": [
-    "designer",
-    "researcher",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "02-design-by-playground",
-   "title": "Design by playground",
-   "url": "https://www.lukew.com/ff/2172/design-by-playground",
-   "source": "Luke Wroblewski",
-   "published": "2026-11-19",
-   "topics": [
-    "ai-prototyping",
-    "craft"
-   ],
-   "kind": "try",
-   "gist": "Designers are using AI coding agents to build small disposable tools that let them tweak variables and see interface results live.",
-   "summary": [
-    "A playground lets you flip text length, size and style and see results instantly.",
-    "It can pull in real content and data, so edge cases show up.",
-    "Agents build them in minutes, and good decisions export as code or tokens."
-   ],
-   "why": {
-    "ai-prototyping": "It replaces static mockups with live tools tailored to one design question, then discarded.",
-    "general": "It hints at a shift away from one dominant design tool toward many purpose built ones."
-   },
-   "importance": 4,
-   "practical": 5,
-   "roles": [
-    "designer"
-   ],
-   "mentions": 2
-  },
-  {
-   "id": "03-ai-sped-up-the-build-but-accessibility-t",
-   "title": "AI sped up the build but accessibility testing lags",
-   "url": "https://smashingmagazine.com/2026/11/ai-sped-up-build-how-can-accessibility-testing-keep-up/",
-   "source": "Smashing Magazine",
-   "published": "2026-11-17",
-   "topics": [
-    "accessibility",
-    "ai-quality"
-   ],
-   "kind": "know",
-   "gist": "A sponsored Level Access survey of over 2,500 professionals found AI sped up planning, design and development far more than QA and testing.",
-   "summary": [
-    "Gains reported in design 61%, planning 58%, development 51%, testing only 30%.",
-    "WebAIM found detected errors per home page rose 10.1%.",
-    "Move accessibility judgment earlier through annotated handoffs, gated pull requests and regression tests."
-   ],
-   "why": {
-    "accessibility": "A two speed workflow means more shipped interfaces with barriers unless checks move earlier in the process.",
-    "general": "Faster building without faster verification pushes quality risk downstream, a pattern that goes beyond accessibility."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "AI speeds up build but not testing",
-      "text": "In Level Access's 2026 State of Digital Accessibility Report (over 2,500 professionals), 58% said AI sped up planning, 61% design and 51% development, but only 30% said it sped up QA and testing. Teams race through building, then slow down when they must ask whether the result is accessible. WebAIM's scan of the top million home pages found automatically detected errors per page rose 10.1% in a year, from 51 to 56.1, with AI-assisted coding cited as one possible factor."
-     },
-     {
-      "head": "Mature programs matter more than AI",
-      "text": "The authors studied 'improvers', organisations improving on every accessibility metric. Their AI adoption rate matched everyone else's, so AI made the smallest difference of anything measured. Their edge lay in training, communication and a culture of accessibility. The data is correlational, and mature programs may simply track wins better. Professionals in mature programs were nearly six times as likely to say AI helps prioritise issues, and nearly three times as likely to say it helps them work more proactively in development."
-     },
-     {
-      "head": "Find issues early, with owners",
-      "text": "Human judgment should sit at three points: finding issues, fixing them and recording evidence. To find issues, spell out focus order, accessible names, states, heading structure and announcements at handoff, and place them in design system components and AI rules files, not only specs. Gate pull requests with automated checks against a baseline, since AI-assisted pull requests arrive faster than reviewers can read them. Automation sweeps pages broadly, while people judge usability; a dropdown can pass automated checks yet keep its submenu unreachable by keyboard. Give each check a named owner: designers specify focus and states, developers run keyboard and screen reader smoke tests, and UX or QA walk the full journey."
-     },
-     {
-      "head": "Fix while context is fresh",
-      "text": "Tickets should carry the element, the reproduction steps, the related WCAG criterion, a suggested fix and the pull request link. Bring guidance into the editor or design file, for example through an MCP server connected to an AI coding assistant. Treat AI fixes as drafts, because assistants optimise for a passing check rather than a correct experience. After re-running checks, review semantics and behaviour, since markup such as role=\"button\" on a div or invented alt text can pass while being wrong. When working older backlog items, start with issues that block key journeys such as paying a bill or resetting a password, then take the quickest fixes."
-     },
-     {
-      "head": "Leave a record of the work",
-      "text": "Every fix should come with a regression test, so an issue is only closed once something would fail if it returned. A passing test does not prove the experience works, so the pull request should also note what was tested, with which assistive technology, and any judgment calls. With that trail in place, tooling can assemble audit answers. The authors say their Reporting Agent cut VPAT/ACR authoring time by more than 70%, but only because the evidence already existed. The tool supports the practice rather than replacing it."
-     }
-    ],
-    "takeaway": "Treat accessibility as part of the design handoff rather than a final QA gate: write focus, names, states and announcements into components and AI rules, annotate intent in Figma, and require a short note of assistive technology testing in every pull request. Track which checks each role owns so AI-accelerated work doesn't pile up unverified accessibility issues."
-   },
-   "importance": 4,
-   "practical": 4,
-   "roles": [
-    "designer",
-    "lead",
-    "pm"
-   ],
-   "mentions": 2
-  },
-  {
-   "id": "04-what-an-agent-harness-is-and-why-ux-team",
-   "title": "What an agent harness is and why UX teams should care",
-   "url": "https://www.nngroup.com/articles/agent-harness/",
-   "source": "NN/g",
-   "published": "2026-11-18",
-   "topics": [
-    "ai-interaction",
-    "ai-quality"
-   ],
-   "kind": "know",
-   "gist": "NN/g defines the agent harness as the software that runs a model's loop, context, tool access and limits, so UX tests should cover whole tasks.",
-   "summary": [
-    "The harness controls the execution loop, context, tools and limits.",
-    "Two assistants on the same model can differ sharply in capability.",
-    "Test full tasks rather than only model output."
-   ],
-   "why": {
-    "ai-interaction": "Agent experience depends on the harness around the model, which is something designers can influence.",
-    "general": "It gives teams shared vocabulary for evaluating AI products beyond the underlying model."
-   },
-   "importance": 4,
-   "practical": 4,
-   "roles": [
-    "designer",
-    "researcher",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "05-web-design-is-turning-into-webmcp",
-   "title": "Web design is turning into WebMCP",
-   "url": "https://blog.galratner.com/p/web-design-is-turning-into-webmcp",
-   "source": "Gal Ratner",
-   "published": "2026-11-17",
-   "topics": [
-    "ai-interaction",
-    "ai-travel-commerce"
-   ],
-   "kind": "know",
-   "gist": "WebMCP lets sites expose structured tools that AI agents call directly, so designers must think about machine readable workflows as well as screens.",
-   "summary": [
-    "In Shopify's tests agents finished all 60 checkouts in 10.3 seconds on average.",
-    "Browser interaction managed 56 successful attempts at 27.4 seconds.",
-    "Designers will handle tool descriptions, permissions and error handling."
-   ],
-   "why": {
-    "ai-interaction": "Interfaces may increasingly be used by agents, which adds tool descriptions and permissions to the design surface.",
-    "general": "If agents bypass visual interfaces, checkout and task flows need a design plan for non human users."
-   },
-   "importance": 4,
-   "practical": 3,
-   "roles": [
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "06-chatgpt-wallet-lets-agents-buy-without-s",
-   "title": "ChatGPT Wallet lets agents buy without seeing your card",
-   "url": "https://openai.com/index/introducing-chatgpt-wallet/",
-   "source": "OpenAI via TLDR AI",
-   "published": "2026-11-16",
-   "topics": [
-    "ai-travel-commerce",
-    "trust"
-   ],
-   "kind": "know",
-   "gist": "OpenAI introduced ChatGPT Wallet so AI agents can make purchases without accessing actual card details, with a security check on every transaction.",
-   "summary": [
-    "Agents can buy on a user's behalf.",
-    "Real card details stay hidden from the agent.",
-    "Each transaction requires a security check."
-   ],
-   "why": {
-    "ai-travel-commerce": "Agent led purchasing is becoming a real product, which changes how checkout and booking flows are designed.",
-    "general": "Per transaction approval is a concrete example of balancing agent autonomy with user control."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "What ChatGPT Wallet is",
-      "text": "OpenAI has introduced ChatGPT Wallet, which lets AI agents make purchases on a user's behalf. The agent never gets access to the user's actual card details. The newsletter blurb gives no further detail on how the wallet works or how it is set up."
-     },
-     {
-      "head": "Security check on every purchase",
-      "text": "Each transaction requires a security check. The newsletter does not say what form that check takes, such as a confirmation prompt or biometric approval."
-     },
-     {
-      "head": "Limits of this source",
-      "text": "The source is only a one-line newsletter teaser, with a 5 minute read link to OpenAI's full announcement. The text does not include figures, examples, or details on rollout, pricing, or supported merchants, so those points cannot be confirmed from this text."
-     }
-    ],
-    "takeaway": "Agent-initiated payments are a trust problem, so a product designer could treat the card-hiding and per-transaction check as the core UX to design around. Open OpenAI's full post to see exactly how the confirmation step works before copying the pattern."
-   },
-   "importance": 4,
-   "practical": 3,
-   "roles": [
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "07-canva-lets-users-turn-off-generative-ai",
-   "title": "Canva lets users turn off generative AI",
-   "url": "https://petapixel.com/2026/11/19/canva-now-lets-users-turn-off-generative-ai-features/",
-   "source": "PetaPixel via TLDR Design",
-   "published": "2026-11-19",
-   "topics": [
-    "trust",
-    "industry"
-   ],
-   "kind": "know",
-   "gist": "Canva added settings letting free and paid users disable generative AI tools, plus a preference to reduce AI made templates and graphics in search.",
-   "summary": [
-    "Magic Write, Magic Design, Magic Edit, Dream Lab and Canva Code can be disabled.",
-    "Non generative tools like Background Remover stay available.",
-    "The search preference favors human made content without guaranteeing AI content vanishes."
-   ],
-   "why": {
-    "trust": "An opt out for AI features is a notable pattern for giving users control over how much AI they see.",
-    "general": "It shows pressure on design tools to respect users who do not want generative features."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "New settings let users switch off generative AI",
-      "text": "Canva has added settings that let both free and paid users turn off its generative AI tools. The tools covered include Magic Write, Magic Design, Magic Edit, Dream Lab, and Canva Code. The source is a short newsletter blurb that summarises a PetaPixel report."
-     },
-     {
-      "head": "Non-generative tools stay on",
-      "text": "Features that edit existing content rather than create new material, such as Background Remover and Magic Grab, remain available. The reasoning is that these tools manipulate what is already there instead of generating new work."
-     },
-     {
-      "head": "Preference to reduce AI content in search",
-      "text": "A separate preference lowers how often AI-generated templates and graphics appear in search results, so human-made content is prioritised. It does not guarantee that AI material is removed entirely."
-     }
-    ],
-    "takeaway": "Give users a clear control over generative AI, separate from editing tools that work on their own content, and be honest that filtering reduces AI content rather than eliminating it. Consider offering a similar search preference for human-made assets in any product that surfaces templates or generated content."
-   },
-   "importance": 4,
-   "practical": 3,
-   "roles": [
-    "designer",
-    "pm",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "08-how-meta-launched-muse-the-number-one-ap",
-   "title": "How Meta launched Muse, the number one app in the App Store",
-   "url": "https://www.lennysnewsletter.com/p/metas-muse-how-we-launched-the-most",
-   "source": "Lenny's Newsletter",
-   "published": "2026-11-15",
-   "topics": [
-    "product-strategy",
-    "growth"
-   ],
-   "kind": "know",
-   "gist": "Meta VP of Product Mona Sarantakos explains how Muse grew from a weekend experiment into what she calls arguably the fastest growing AI consumer product.",
-   "summary": [
-    "It began as a weekend with OpenClaw on a Raspberry Pi.",
-    "The team waited seven months to launch.",
-    "Agent swarms and input from Nat Friedman, Alex Wang and Mark Zuckerberg shaped it."
-   ],
-   "why": {
-    "product-strategy": "It is a rare inside account of launch timing and leadership influence on a breakout AI consumer product.",
-    "general": "The seven month wait before launch is a useful counterpoint to ship fast advice."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "What Muse is",
-      "text": "Muse is Meta's AI consumer app, described as the number one app in the App Store and arguably the fastest-growing AI consumer product of all time. Mona Sarantakos, VP of Product at Meta Superintelligence Labs and a 10-year Meta veteran, has led its product since day one."
-     },
-     {
-      "head": "Origins and timing",
-      "text": "The product began with a weekend experiment using OpenClaw on a Raspberry Pi. The team started before most competitors but waited seven months before launching. The article does not explain the reasons for the delay in this text."
-     },
-     {
-      "head": "Leadership input and team methods",
-      "text": "The discussion covers how Nat Friedman, Alex Wang and Mark Zuckerberg each shaped the product. It also covers how the team uses agent swarms to surface user insights at scale. The article gives no detail on how these work."
-     },
-     {
-      "head": "Surprises and the mascot",
-      "text": "The interview covers a use case nobody on the team predicted, and how Jolly, a placeholder avatar, became an icon. The article does not describe either in detail."
-     },
-     {
-      "head": "Activation levers",
-      "text": "Mona describes the two levers that actually move activation for an AI agent. The article lists this topic but does not state what the levers are."
-     },
-     {
-      "head": "What the article does not contain",
-      "text": "This page is a podcast listing with a topic outline, sponsor notes and links. It contains no detailed findings, numbers or method beyond the headline claims. The substance is in the full episode on YouTube, Spotify or Apple Podcasts, or in the linked Meta and How I AI pieces."
-     }
-    ],
-    "takeaway": "The page offers little design guidance on its own. If the topic matters, watch the episode for the two activation levers and the agent swarm method, or read the linked How I AI piece with Alex Cornell on how Muse was designed."
-   },
-   "importance": 4,
-   "practical": 3,
-   "roles": [
-    "pm",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "09-service-as-a-software-and-the-ux-of-outc",
-   "title": "Service as a software and the UX of outcome pricing",
-   "url": "https://www.uxtigers.com/post/service-as-software",
-   "source": "Jakob Nielsen",
-   "published": "2026-11-18",
-   "topics": [
-    "product-strategy",
-    "trust"
-   ],
-   "kind": "know",
-   "gist": "Nielsen argues AI vendors now sell finished work and charge per outcome, which makes designing and auditing the meter a core UX job.",
-   "summary": [
-    "Outcome pricing shifts the cost of failed work to the seller.",
-    "Failure consequences and uncounted phantom resolutions remain the buyer's problem.",
-    "Designers should help design and audit how outcomes are counted."
-   ],
-   "why": {
-    "product-strategy": "Pricing by outcome changes what a good product looks like and who carries risk.",
-    "general": "How a result is counted becomes a trust question that design and PM must own."
-   },
-   "importance": 4,
-   "practical": 3,
-   "roles": [
-    "pm",
-    "designer",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "10-a-four-question-audit-for-adding-ai-to-a",
-   "title": "A four question audit for adding AI to a feature",
-   "url": "https://www.smashingmagazine.com/2026/11/should-you-add-ai-audit-product-teams/",
-   "source": "Smashing Magazine",
-   "published": "2026-11-17",
-   "topics": [
-    "ai-interaction",
-    "product-strategy"
-   ],
-   "kind": "try",
-   "gist": "A Smashing guide weighs saved effort and caught errors against the cost users pay learning and verifying an AI feature, using four audit questions.",
-   "summary": [
-    "Ask if it cuts total effort and beats the current method.",
-    "Ask if users can catch errors and keep verification skills after a year.",
-    "A benefits appeals tool worked once it surfaced provisions instead of drafting determinations."
-   ],
-   "why": {
-    "ai-interaction": "It gives teams a practical checklist before committing to an AI feature.",
-    "general": "Rescoping a feature from generating to surfacing shows how to keep humans in control."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "Added AI can raise total effort even when the tech works",
-      "text": "A health insurer's AI wrote full benefits-appeal determinations. The tech worked, but specialists stopped using it, and users took longer per case because checking an AI draft took as long as writing one and required catching errors they would never make. Rescoping so the AI surfaces relevant policy provisions and prior decisions, while the specialist writes, cut search time and reduced review time."
-     },
-     {
-      "head": "Every change has a break-even line",
-      "text": "Users pay attention to rebuild their mental model, learn the new interface, and judge how far to trust the AI. Working memory holds about four items, so these costs compete for a small supply. For expert workers, handing off synthesis or the recommendation can turn them into checkers or sign-off clerks, which can feel like a loss of professional identity. A feature pays off only if its returns (errors caught, speed or scale, consistency across people) outweigh that cost. A fraud screening tool that catches flags analysts would miss is an example of a return that clears the line."
-     },
-     {
-      "head": "Four questions to run before design",
-      "text": "1) Does it reduce total effort, counting the checking the user inherits? Pre-filling a field moves the cost to verification. Fit depends on who the user is: a junior analyst may gain a starting point, while a senior analyst gains nothing from reviewing a draft against their own view. 2) Does it beat the user's current method, including their own workarounds? AI wins on real ambiguity, scale, speed, consistency, or catching what the current method misses, and loses to a practiced route to a known answer. An HR succession tool that finds unexpected candidate skill combinations beats the existing method, while a notification email draft does not. 3) Can the user catch errors? Rate error visibility and consequence. Automation bias makes invisible errors dangerous, as a trip planner suggesting a museum on its closing day shows. Low visibility plus high consequence becomes a requirement, and showing provenance such as source, data origin and date helps trust settle at the right level. 4) After a year, can the user still judge the AI's output? Routine skills can go, but verification judgment must stay. In a 2023 radiology study, 27 readers' accuracy fell sharply when the AI suggestion was wrong, and experience only softened the drop. Mechanisms such as blind review, rotating cases off AI assistance, or weekly comparisons with human work keep that skill in use."
-     },
-     {
-      "head": "Turn answers into design conditions",
-      "text": "Use a decision matrix: clear answers across all four questions support building as proposed. A poor answer on Question 1 calls for a design condition or scope change unless Question 2 shows a return that covers the cost. Questions 2 and 4 work similarly, but a poor answer on Question 3 can halt the build. Write the conditions, such as provenance display, verification prompts, segment scoping and skill-preserving mechanisms, into the design brief from the start rather than leaving them until late, when they read as polish and get cut under deadline pressure."
-     },
-     {
-      "head": "Worked examples: appeals tool and meeting summaries",
-      "text": "The appeals tool fails Question 1 because writing takes sustained thought and the AI moves effort into verification. Question 3 raises the stakes because errors affect medical coverage, which led to a provenance requirement citing source and retrieval date. Question 4 supports the second version, since specialists still write determinations. For meeting summaries, Question 1 shows total effort drops for participants who never took notes but shifts checking onto the habitual note-taker. Summaries beat patchy notes on completeness and consistency. Misattributed commitments look correct and are rarely checked, so linked timestamps behind action items are required, and the habitual note-taker should be checked after launch."
-     },
-     {
-      "head": "Running the audit in 60 minutes and presenting it",
-      "text": "Spend 10 minutes stating the task for one user in one sitting, 25 minutes with someone who does the work to find where effort sits, 15 minutes mapping the three likeliest error types by visibility and consequence, and 10 minutes writing conditions into the brief. Present results as conditions and scoped yeses rather than reasons to kill the feature. Name the segment it serves, offer error-surface requirements with costs attached, and propose a smaller scope when one is better, such as surfacing provisions rather than writing the determination. Rogers' pro-innovation bias warns against assuming new capability equals progress before benefit is verified."
-     }
-    ],
-    "takeaway": "Before design starts, test any proposed AI feature against four questions: total effort including checking, advantage over the current method, whether users can see errors, and whether users keep the skill to judge output a year later. Turn the answers into scope limits, provenance and verification requirements, and skill-preserving mechanisms in the design brief, and offer a narrower scope when the full feature fails."
-   },
-   "importance": 4,
-   "practical": 5,
-   "roles": [
-    "pm",
-    "designer"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "11-prototypes-have-always-been-the-best-spe",
-   "title": "Prototypes have always been the best specification",
-   "url": "https://uxdesign.cc/prototypes-have-always-been-the-most-effective-specification-10162107b2ee",
+   "id": "01-how-to-write-great-agent-skills",
+   "title": "How to write great agent skills",
+   "url": "https://uxdesign.cc/how-to-write-great-skills-91635bc45ada?source=rss----138adf9c44c---4",
    "source": "UX Collective",
    "published": "2026-11-22",
    "topics": [
-    "ai-prototyping",
-    "product-strategy"
+    "ai-interaction",
+    "ai-prototyping"
    ],
    "kind": "try",
-   "gist": "When a working version costs an afternoon, the prototype comes before the requirements document and answers open questions the document could not.",
+   "gist": "A practical guide to writing agent skills, drawing on several respected practitioners and Anthropic.",
    "summary": [
-    "A teammate builds a working feature before the requirements review.",
-    "Clicking it answers some open questions and shows others were wrong.",
-    "The document written afterward beats the one written first."
+    "Covers advanced and practical guidance for agent skills",
+    "Draws on Matt Pocock, Nate Herk, Addy Osmani and Anthropic",
+    "Useful for designers shaping how agents are instructed"
    ],
    "why": {
-    "ai-prototyping": "It reframes prototypes as the specification once AI makes building cheap.",
-    "general": "Teams may need to rethink the order of requirements, sign off and build."
+    "ai-interaction": "Agent skills define what an assistant can do, so writing them well shapes the user experience directly.",
+    "general": "A concrete, current method for anyone building with AI agents this week."
+   },
+   "importance": 4,
+   "practical": 5,
+   "roles": [
+    "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "02-running-a-personal-agent-with-approvals",
+   "title": "Running a personal agent with approvals and guardrails",
+   "url": "https://www.lennysnewsletter.com/p/openclaw-for-executives-automate",
+   "source": "Lenny's Newsletter",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-interaction",
+    "trust"
+   ],
+   "kind": "know",
+   "gist": "A CTO describes a personal agent that handles approvals, calls and errands, and the guardrails that make it trustworthy.",
+   "summary": [
+    "Started with approvals that were slowing down his work",
+    "Split voice calling into its own subagent",
+    "Relies on soul files and guardrails to stay trustworthy"
+   ],
+   "why": {
+    "ai-interaction": "Shows how people really delegate multi-step tasks to agents and where they want control.",
+    "general": "A real case of agent use that surfaces trust and control questions for product teams."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Starting point was approvals",
+      "text": "Ankit Maheshwari, CTO of Innovaccer, began running OpenClaw on a Mac Mini because work approvals were making him the bottleneck. The episode description says the system then grew to handle lunch ordering, calling coworkers who do not reply on Slack, restaurant reservations, and switching on the AC before he gets home. The article covers his soul files, guardrails, a separate voice-calling subagent, and whether a local model like GLM 5.3 Flash could replace a $500 to $600 a month Anthropic bill."
+     },
+     {
+      "head": "Soul files and subagents",
+      "text": "Instead of one global agent, he splits work into well-scoped subagents, each with its own role, such as a health coach, email triage, and a master soul that sets shared behaviour. The article notes that one global agent hallucinated personas, and that scoping each subagent fixed this and beat a single agent for everything. Voice calling was split out into its own subagent."
+     },
+     {
+      "head": "Guardrails and the mid-flight test",
+      "text": "The article covers a mid-flight moment that tested his guardrails and explains how the guardrails make the system trustworthy enough to act on his behalf. He treats the agent much like a new hire he talks to in plain terms. The 1 percent annoyance rule is a principle for deciding which small frictions are worth automating."
+     },
+     {
+      "head": "Real tasks and cost trade-off",
+      "text": "Jarvis handles food ordering, travel and restaurant bookings through tools such as Navan and DoorDash Meal Manager, and controls his smart home. It calls people who do not answer on Slack, using voice tooling such as Bland AI, ElevenLabs and Twilio. He is pressure-testing whether a local model, GLM 5.3 Flash, can cut his cloud bill, and the article looks at what that model can and cannot do."
+     }
+    ],
+    "takeaway": "Build approvals and notifications so that a single pending decision does not stall a chain of dependent actions, and scope each AI assistant to one narrow job with explicit guardrails rather than one general agent. Test whether a cheaper local model can handle the routine tasks before paying for a frontier model on everything."
    },
    "importance": 3,
    "practical": 4,
    "roles": [
     "pm",
-    "designer",
-    "lead"
+    "designer"
    ],
    "mentions": 1
   },
   {
-   "id": "12-design-engineering-has-a-handoff-problem",
-   "title": "Design engineering has a handoff problem",
-   "url": "https://southleft.substack.com/p/design-engineering-has-a-handoff",
-   "source": "Southleft",
-   "published": "2026-11-19",
+   "id": "03-ai-does-not-hesitate-and-designers-lose",
+   "title": "AI does not hesitate, and designers lose friction",
+   "url": "https://uxdesign.cc/decision-theater-human-md-what-is-a-researchers-worth-d7687978bd26?source=rss----138adf9c44c---4",
+   "source": "UX Collective",
+   "published": "2026-11-23",
    "topics": [
-    "design-systems",
-    "ai-prototyping"
+    "ai-interaction",
+    "research"
    ],
    "kind": "know",
-   "gist": "AI generated components from designers pile up in engineering review queues, so the handoff has moved down a level without the governance engineers built.",
+   "gist": "An essay argues that conversing with a machine removes the friction of hesitation that human exchanges carry.",
    "summary": [
-    "Hardcoded values and inline SVGs end up in engineers' queues.",
-    "Designers lack the permissions and shared tooling engineering built over years.",
-    "Hold designer code to the same merge bar and run deterministic checks first."
+    "Machines answer without searching for words or bracing",
+    "Human hesitation carries meaning in conversation",
+    "Raises questions for researchers studying AI interactions"
    ],
    "why": {
-    "design-systems": "Components built outside system rules create review debt, so governance and automated checks matter.",
-    "general": "Designers shipping code shifts responsibility, and teams need clear standards to avoid new friction."
+    "ai-interaction": "Points at a design gap, since frictionless answers can remove the pauses that help people think.",
+    "general": "A reflective read for researchers weighing what AI conversation loses."
    },
    "detail": {
     "points": [
      {
-      "head": "The handoff problem has moved down a level",
-      "text": "AI-generated components made by designers were meant to lighten engineers' load. Instead, components with hardcoded values and inline SVGs are piling up in engineers' review queues. The article's core claim is that the handoff has not disappeared but has simply shifted from designers to engineers, with designers now producing code for engineers to review."
+      "head": "AI answers without hesitation",
+      "text": "The newsletter opens with the idea that talking to a machine has no built-in friction. It does not search for words, worry about how a question will land, or brace for how an answer will be received. It simply responds. The piece is titled around the discipline of hesitation and is linked from the edition's first item."
      },
      {
-      "head": "Designers lack the infrastructure engineers built",
-      "text": "Engineering teams have built up governance, permissions and shared tooling over many years. Designers writing code generally do not have these, which is why their output tends to create friction when it reaches review."
+      "head": "Friction is becoming scarce",
+      "text": "A researcher career piece argues that effortless AI makes human friction the scarcest asset. The implication is that the pauses, uncertainty and effort people bring to a task are growing more valuable as machines remove them. The roundup frames this as a question of what a researcher's worth really is."
      },
      {
-      "head": "Proposed fix: same bar, automated checks first, lighter setup",
-      "text": "The article suggests holding designer code to the same merge bar as engineering code. It also recommends running deterministic checks before any human review, so mechanical problems are caught automatically. Finally, it proposes giving designers a lighter environment in which to work, rather than the full engineering setup."
+      "head": "Tools need judgment to match",
+      "text": "One linked essay, In making things, we make ourselves, says better technology alone is not enough and that access to powerful tools is not the same as knowing how to use them well. As tools advance, the skills and judgment of their users must be cultivated too. A related quote notes that the pace of change keeps increasing and that long-honed senses for deciding what comes next feel dulled."
+     },
+     {
+      "head": "Other pieces in the roundup",
+      "text": "The edition also lists AI as a new old design material, which treats models as the next material, and decision design, which moves from building knowledge to owning decisions. It includes a short game about craft and impermanence, a skateboarding piece on everyone having the tools but not the tricks, and a note on why design may answer the value of software. Most items are brief teasers with one-line descriptions and no detailed evidence."
      }
     ],
-    "takeaway": "If you ship AI-generated or code-based designs, expect them to face the same review standards as engineering code, so run automated checks such as linting for hardcoded values before handing work over. Ask your engineering team which lighter, shared tooling they would give designers, so your prototypes arrive in a form they can review quickly."
+    "takeaway": "Treat hesitation and friction as deliberate design features rather than defects to remove, since they may carry human judgment and value. Also invest in helping users build the skill and judgment to use powerful AI tools well, not just in making the tools more capable."
    },
-   "importance": 4,
-   "practical": 4,
+   "importance": 2,
+   "practical": 2,
    "roles": [
-    "designer",
+    "researcher",
     "lead"
    ],
    "mentions": 1
   },
   {
-   "id": "13-every-click-has-a-price-now-who-designs",
-   "title": "Every click has a price now, who designs how that feels",
-   "url": "https://uxdesign.cc/every-click-has-a-price-now-who-designs-how-that-feels-e3f00b6cabb8",
+   "id": "04-ai-is-the-new-old-design-material",
+   "title": "AI is the new old design material",
+   "url": "https://uxdesign.cc/ai-is-the-new-old-design-material-0e7f83540c9a",
    "source": "UX Collective",
-   "published": "2026-11-16",
+   "published": "2026-11-23",
    "topics": [
-    "trust",
     "ai-interaction"
    ],
    "kind": "know",
-   "gist": "As AI products move to credit and usage pricing, interactions carry visible cost, so cost estimates and spending controls become interface features.",
+   "gist": "An essay argues that AI models are becoming the next design material that teams must learn to shape.",
    "summary": [
-    "Unpredictable charges and sudden usage limits can erode trust.",
-    "Transparent estimates, controls and clear feedback are essential.",
-    "Designers must decide when costly AI is justified over simpler options."
+    "Frames models as a design material like any other",
+    "Suggests designers must learn the material's behaviour",
+    "Linked as an editor pick this week"
    ],
    "why": {
-    "trust": "Cost anxiety is a new trust problem that interface design can reduce.",
-    "general": "Usage based pricing makes everyday UI decisions into financial ones."
+    "ai-interaction": "Treating models as material changes how designers approach AI features.",
+    "general": "A useful framing for leads planning AI product work."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Conversation with machines has no friction",
+      "text": "The newsletter opens with a quote from The Discipline of Hesitation: talking to a machine involves no built-in friction. It does not hesitate, search for words, worry about how a question will land, or brace for a reaction. It just answers."
+     },
+     {
+      "head": "AI as a new design material",
+      "text": "The featured piece, AI is the new old design material by Patrick Neeman, argues that models are the next material for designers to work with. The text given here offers only this one-line framing, so the full argument is not available in this summary."
+     },
+     {
+      "head": "From building knowledge to owning decisions",
+      "text": "Patrizia Bertini's Decision theatre or decision design? contrasts building knowledge with owning decisions. The newsletter gives only this short framing, with no further detail on her method or examples."
+     },
+     {
+      "head": "Design as the answer to software costs",
+      "text": "Ed Orozco's Why bother paying for software anymore? claims design is the answer AI enthusiasts did not expect. The excerpt gives no supporting evidence or examples."
+     },
+     {
+      "head": "Craft, judgment and fading instincts",
+      "text": "Several linked pieces raise the same concern. Better technology alone is not enough, since access to powerful tools is not the same as using them well, so the skills and judgment of users must grow alongside the tools. One writer also reports that the pace of change keeps rising and that the senses they had honed for predicting what comes next now feel dulled."
+     },
+     {
+      "head": "Human friction as a scarce asset",
+      "text": "In What is a researcher's worth?, Matt Rafalow argues that effortless AI makes human friction the scarcest asset. Other short pieces include a game about impermanence and craft, a skateboarding analogy that everyone has the tools but not the tricks, and a question about why people commute to watch AI work."
+     }
+    ],
+    "takeaway": "Treat friction and human judgment as deliberate design features rather than defects to remove, since effortless AI interaction may make those qualities scarce. Consider how a product can keep users' skills and decision-making engaged, not just deliver fast answers."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "lead",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "05-google-labs-stitch-loop-keeps-products-i",
+   "title": "Google Labs' Stitch Loop keeps products improving after launch",
+   "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/stitch-loop/?utm_source=tldrdesign",
+   "source": "Google Labs",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-prototyping",
+    "ai-interaction"
+   ],
+   "kind": "know",
+   "gist": "Stitch Loop is an agent that connects to code and live metrics, proposes fixes, and waits for human approval.",
+   "summary": [
+    "Suggests fixes and opens GitHub pull requests for review",
+    "Nothing merges until a person approves the change",
+    "Built-in loops cover security, latency and accessibility"
+   ],
+   "why": {
+    "ai-prototyping": "Shows AI tools moving from generating screens to maintaining products after launch.",
+    "general": "A clear example of human approval built into an agent workflow."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "What Stitch Loop is",
+      "text": "Stitch Loop is a long-running product agent from Google Labs that connects to a product's codebase and live metrics. Its job is to keep improving software after it has launched rather than stopping at release. It is presented as a new way to build and evolve products."
+     },
+     {
+      "head": "How it works",
+      "text": "The agent suggests fixes, writes the code in a cloud sandbox, and opens GitHub pull requests. Nothing merges on its own, because a person must approve each change before it goes in. This keeps a human in control of what reaches the live product."
+     },
+     {
+      "head": "Built-in improvement loops",
+      "text": "Stitch Loop ships with ready-made loops for security, latency, and accessibility. These run continuously against the product, so the agent looks after those concerns over time."
+     },
+     {
+      "head": "Availability",
+      "text": "A global waitlist is open. Eligible Google AI Ultra users get priority access."
+     }
+    ],
+    "takeaway": "Treat post-launch quality as an ongoing loop that a product agent can run, with human approval gating every change. For designers, the built-in accessibility loop is a concrete reason to check how automated fixes affect interface behaviour before approving them."
+   },
+   "importance": 4,
+   "practical": 3,
+   "roles": [
+    "pm",
+    "designer"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "06-google-play-will-require-foldable-ready",
+   "title": "Google Play will require foldable-ready apps from April 2027",
+   "url": "https://www.digitaltrends.com/phones/google-play-will-require-foldable-ready-apps-starting-in-april-2027/?utm_source=tldrdesign",
+   "source": "Digital Trends",
+   "published": "2026-11-23",
+   "topics": [
+    "craft",
+    "industry"
+   ],
+   "kind": "know",
+   "gist": "Google Play sets baseline foldable standards, including filling the screen, preserving activity and supporting multi-window.",
+   "summary": [
+    "Apps must fill the screen without letterboxing",
+    "Must keep user activity when devices fold or rotate",
+    "Developers must supply foldable screenshots"
+   ],
+   "why": {
+    "craft": "Responsive layout across device postures is becoming a platform requirement, not an option.",
+    "general": "A dated deadline that affects any team shipping Android apps."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Foldable compliance becomes mandatory on Google Play",
+      "text": "From April 2027, Google Play will require Android apps to meet baseline foldable compatibility standards. Apps that do not comply could lose the ability to publish updates. This is a publishing gate, not just a recommendation."
+     },
+     {
+      "head": "Baseline requirements",
+      "text": "Apps must fill the available screen without letterboxing, keep the user's activity intact when a device folds or rotates, and support multi-window operation. Developers must also supply foldable screenshots as part of their listing."
+     },
+     {
+      "head": "Advanced guidelines",
+      "text": "More advanced guidance encourages responsive multi-pane layouts, support for external input devices, and interfaces that adapt to different device postures, such as a half-open fold. These are framed as encouraged rather than required."
+     }
+    ],
+    "takeaway": "Audit key screens for letterboxing, state preservation on fold and rotate, and multi-window behaviour well before April 2027, and plan responsive multi-pane layouts for tablet and foldable sizes. Budget time to produce foldable screenshots for store listings."
    },
    "importance": 3,
    "practical": 4,
@@ -670,539 +403,245 @@
    "mentions": 1
   },
   {
-   "id": "14-ai-is-the-new-old-design-material",
-   "title": "AI is the new old design material",
-   "url": "https://uxdesign.cc/ai-is-the-new-old-design-material-0e7f83540c9a",
+   "id": "07-designing-enterprise-dashboards-around-e",
+   "title": "Designing enterprise dashboards around exceptions",
+   "url": "https://uxdesign.cc/send-the-firefighters-to-the-fires-6cd7b1893ae7?utm_source=tldrdesign",
    "source": "UX Collective",
-   "published": "2026-11-19",
+   "published": "2026-11-23",
    "topics": [
-    "ai-quality",
-    "ai-interaction"
+    "craft",
+    "product-strategy"
    ],
    "kind": "try",
-   "gist": "A mockup shows one sample but a model returns a distribution, so run each prompt many times and bring the worst answers to design review.",
+   "gist": "Enterprise interfaces should surface abnormal conditions first, using management by exception rather than full tables.",
    "summary": [
-    "Run each prompt 50 times to see the spread of answers.",
-    "Bring the worst outputs to design review.",
-    "Save failures as shared test cases for the team."
+    "Urgent problems often hide inside huge tables",
+    "Prioritise abnormal conditions and actionable issues",
+    "Reduces cognitive load and speeds problem resolution"
    ],
    "why": {
-    "ai-quality": "It turns evaluating AI behavior into a repeatable design habit rather than a one sample judgment.",
-    "general": "Designers learn a medium by working it, and this offers a concrete way to work AI."
+    "craft": "Gives a concrete pattern for dashboard layout that lowers the effort of finding what needs attention.",
+    "general": "A practical principle that applies to any operational software."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Urgent problems get buried in enterprise interfaces",
+      "text": "Enterprise screens often bury urgent issues inside huge tables, so users have to search through hundreds of records to find what needs attention. The article argues the dashboard should surface the problems first rather than making people hunt for them."
+     },
+     {
+      "head": "Management by exception as the guiding principle",
+      "text": "The principle of management by exception is more than a century old. It says operational software should prioritise abnormal conditions and actionable issues, while healthy systems stay in the background."
+     },
+     {
+      "head": "Benefits of designing around exceptions",
+      "text": "Designing around exceptions rather than exhaustive inventories is said to reduce cognitive load and speed up problem resolution. The result is a dashboard that is more useful to the people responsible for fixing things."
+     },
+     {
+      "head": "Limits of the digest summary",
+      "text": "The digest gives only a brief overview of this 13-minute article. It does not include the article's specific examples, worked dashboard patterns, or detailed method, so those are not covered here."
+     }
+    ],
+    "takeaway": "Start enterprise dashboards with the items that need action, such as abnormal or overdue records, and push healthy status into the background. Test whether a user can find the urgent problem in a few seconds without scrolling through full tables."
    },
    "importance": 3,
    "practical": 5,
    "roles": [
     "designer",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "08-ai-made-designers-faster-but-gave-them-l",
+   "title": "AI made designers faster but gave them less time",
+   "url": "https://hackernoon.com/ai-made-us-faster-so-why-do-designers-have-less-time?utm_source=tldrdesign",
+   "source": "HackerNoon",
+   "published": "2026-11-23",
+   "topics": [
+    "leadership",
+    "growth"
+   ],
+   "kind": "know",
+   "gist": "Faster AI generation has brought shorter deadlines and more revisions, and perceived speed can differ from real speed.",
+   "summary": [
+    "Generation is fast but review and revisions multiply",
+    "Cites a 2025 METR study on perceived versus actual speed",
+    "Deadlines have tightened for many designers"
+   ],
+   "why": {
+    "leadership": "Team leads need to plan capacity around review work that AI creates.",
+    "general": "Sheds light on the gap between perceived and measured productivity."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "AI cut generation time but added work",
+      "text": "AI has sharply reduced the time it takes to produce creative work, yet designers often face tighter deadlines, more revision rounds, and a flood of options to assess. The gain in speed has been eaten by the extra evaluation and review that follows."
+     },
+     {
+      "head": "Feeling faster is not the same as being faster",
+      "text": "A 2025 study by METR found that experienced developers took 19% longer to finish tasks using early-2025 AI tools, even though they believed they were working faster. The gap between perceived and actual productivity is the core warning in the piece."
+     },
+     {
+      "head": "Bolting AI onto old workflows is the problem",
+      "text": "Much of the trouble comes from adding AI to workflows that were left unchanged. Saving real time requires deliberate constraints, faster ways of choosing between options, and stronger design fundamentals."
+     }
+    ],
+    "takeaway": "Redesign the workflow around AI rather than just inserting it, by setting limits on how many options are produced and building quick selection methods. Measure actual cycle time and review load, not just how fast drafts appear."
+   },
+   "importance": 4,
+   "practical": 3,
+   "roles": [
+    "lead",
+    "pm"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "09-jakob-nielsen-s-roundup-on-ux-and-ai",
+   "title": "Jakob Nielsen's roundup on UX and AI",
+   "url": "https://www.uxtigers.com/post/ux-roundup-20261123",
+   "source": "Nielsen Norman Group",
+   "published": "2026-11-23",
+   "topics": [
+    "ai-quality",
+    "industry"
+   ],
+   "kind": "know",
+   "gist": "Nielsen notes AI trails coding by about a year on hard-to-verify work like UX but improves just as fast.",
+   "summary": [
+    "AI lags coding by about a year on UX-type work",
+    "Argues agents may remove the need to operate single features",
+    "Notes paid AI subscriptions save time versus a degree"
+   ],
+   "why": {
+    "ai-quality": "Hard-to-verify work like UX is where evaluation is least obvious.",
+    "general": "A weekly signal on where AI and UX are heading."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "AI improves on hard-to-verify work at the same pace",
+      "text": "METR data shows AI's time horizon doubles roughly every 3.6 months across technical tasks. Easy-to-verify tasks such as coding double every 3.8 months and hard-to-verify tasks such as UX and product management every 3.4 months, a difference the author treats as a tie. Hard tasks lag by about 5 months because verification is slower, so fewer training rounds are possible."
+     },
+     {
+      "head": "Verification is the bottleneck",
+      "text": "AI labs train with reinforcement learning, where automated graders reward successes. Code passes tests in seconds, while UX quality only shows when real users respond, often weeks later, and product strategy is judged by the market months or a year later with confounding factors. The slower the verdict, the fewer practice rounds AI receives."
+     },
+     {
+      "head": "UX is about a year behind developers",
+      "text": "The author estimates the lag at about 5 months from the data, adds about 4.6 months for an assumed extra doubling of verification cost, and rounds up to roughly one year. Developers already delegate tasks of nearly two working weeks to agents and now spend more time reviewing than typing, so UX designers, usability analysts and product managers should expect a similar shift by late 2027."
+     },
+     {
+      "head": "Use the lag to prepare",
+      "text": "The author suggests studying developers to see what they delegate and how they review agent output, and making UX quality easier to verify with machine-checkable rules, automated accessibility checks, analytics and fast user testing. He estimates that predicting usability with AI needs 10,000 to 100,000 hours of annotated user sessions, which someone must collect."
+     },
+     {
+      "head": "Agents change feature discovery",
+      "text": "Users have never reliably found features, a problem known as the paradox of the active user, and Pendo found 80% of features are rarely or never used. Agents that read all documentation and act on user goals remove two of three discovery layers, but the blank prompt box makes it harder for users to know what is possible. Trust grows as agents prove reliable on small tasks before larger ones are delegated."
+     },
+     {
+      "head": "Eight guidelines for human users",
+      "text": "Promote features at moments of need, especially when users do something the hard way. Let users pull promotions via a What's new entry point, since users finished 64% of self-started tours but only 22% of 5-step tours. Show at most one dismissible promotion per session, keep the core flow uncluttered with clearly named doors instead of generic sparkle icons, label shared results with the feature that made them, map users' everyday search words to features, and recommend features used by similar users, which Autodesk research found produced 2.1 times as many good recommendations."
+     }
+    ],
+    "takeaway": "Expect AI to reach UX-specific work about a year after it reaches developers, so start by studying how engineers delegate to agents and by making design quality easier to verify. For feature discovery, prepare for agents that act on user goals, but for human users, promote features at moments of need, let users pull them, and name features in plain words."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "lead",
     "researcher"
    ],
    "mentions": 1
   },
   {
-   "id": "15-stark-brings-accessibility-checks-into-c",
-   "title": "Stark brings accessibility checks into Codex and ChatGPT",
-   "url": "https://www.getstark.co/blog/stark-in-codex/",
-   "source": "Stark via TLDR Design",
-   "published": "2026-11-17",
-   "topics": [
-    "accessibility",
-    "ai-prototyping"
-   ],
-   "kind": "try",
-   "gist": "Stark now ships as a plugin with skills in Codex and ChatGPT, scanning Figma files, code, Storybook, mobile apps and live URLs.",
-   "summary": [
-    "Codex can pull violations with context and code level fixes.",
-    "It can flag projects with the most open issues and summarize compliance.",
-    "Five skills tailor fixes to the role, from contrast to ARIA."
-   ],
-   "why": {
-    "accessibility": "Accessibility checks inside the tools where AI generated work happens can catch problems earlier.",
-    "general": "Role tailored fixes help designers and developers act on the same findings."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "designer"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "16-gemini-computer-use-on-mac-works-in-a-ba",
-   "title": "Gemini computer use on Mac works in a background window",
-   "url": "https://blog.google/innovation-and-ai/products/gemini-app/computer-use-mac/",
-   "source": "Google via TLDR AI",
-   "published": "2026-11-20",
-   "topics": [
-    "ai-interaction",
-    "trust"
-   ],
-   "kind": "know",
-   "gist": "Gemini on Mac can do multi step tasks across files, apps and the web in an isolated background window while users keep working.",
-   "summary": [
-    "A live preview shows in chat while the main screen stays free.",
-    "Users choose which apps Gemini can access.",
-    "Users can pause and approve key actions before they happen."
-   ],
-   "why": {
-    "ai-interaction": "Isolated windows, live previews and approvals are concrete patterns for supervising agents.",
-    "general": "It shows how a major vendor handles visibility and consent for computer using agents."
-   },
-   "importance": 3,
-   "practical": 3,
-   "roles": [
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "17-how-a-solo-founder-fights-ai-token-fraud",
-   "title": "How a solo founder fights AI token fraud",
-   "url": "https://www.lennysnewsletter.com/p/how-i-fight-token-fraud-as-a-solo",
-   "source": "Lenny's Newsletter",
-   "published": "2026-11-16",
-   "topics": [
-    "product-strategy",
-    "growth"
-   ],
-   "kind": "know",
-   "gist": "The founder of ChatPRD describes six abuse patterns that cost tens of thousands of dollars and why free trials were finally killed.",
-   "summary": [
-    "Fraudsters farmed free trials, resold promo codes and ran relays.",
-    "One custom MCP ran as a 24/7 compute worker.",
-    "Business and technical controls included a loop that classifies fraud in real time."
-   ],
-   "why": {
-    "product-strategy": "If you sell AI you sell compute, so trial and pricing design are tied to abuse risk.",
-    "general": "It is a practical warning for PMs planning free tiers on AI products."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "pm",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "18-ux-research-hiring-is-down-sharply-in-20",
-   "title": "UX research hiring is down sharply in 2026",
-   "url": "https://www.thevoiceofuser.com/who-is-getting-hired-in-ux-research-in-2026-and-what-theyre-getting-paid/",
-   "source": "The Voice of User via TLDR Design",
-   "published": "2026-11-17",
-   "topics": [
-    "research",
-    "leadership"
-   ],
-   "kind": "know",
-   "gist": "An analysis of 1,593 postings finds about 1,800 US researchers hired in a year, 66% fewer than in 2022, with few early career roles.",
-   "summary": [
-    "Only 10% of postings targeted early career researchers.",
-    "43% sought senior candidates, favoring quant skills and AI product experience.",
-    "Top pay clusters among experienced researchers at big tech firms."
-   ],
-   "why": {
-    "research": "Skills in quantitative methods, AI products and strategic influence are what employers now ask for.",
-    "general": "The shrinking entry level pipeline raises questions about how the profession develops talent."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "Hiring is senior-heavy",
-      "text": "Brian Utesch analyzed 1,593 UX research postings from June and July 2026. Only 10% were for early-career researchers, while 43% were senior, 25% mid-level, 17% management and 5% executive. Big employers ask for even more experience, such as Meta asking for 10+ years for one role and Google DeepMind asking for 7+ and 10+ years."
-     },
-     {
-      "head": "Pay follows AI and data work",
-      "text": "In a Remote Job Assistant sample of 211 US postings, roles on AI products had a median midpoint of $192,030, against $151,988 for the rest. Roles asking for statistics, a PhD or a quantitative title had $176,450, against $157,000 for those without. Utesch's sample agreed, with AI-mentioning postings at $178,000 against $155,000."
-     },
-     {
-      "head": "Same title, very different pay",
-      "text": "OpenAI's quantitative researcher role pays $266,000 to $385,000 and asks for SQL and Python. AnswerLab's quantitative researcher role pays $90,000 to $130,000 and asks for survey design, regression and R, Python or SPSS. The skills overlap a lot, so the employer and what it builds drive most of the gap."
-     },
-     {
-      "head": "Few companies hire most researchers",
-      "text": "Meta and Google made about one in eight US user research hires in 2025, and Google was the only company to hire 50 or more so far in 2026. Google cut more than 100 Cloud design roles in October 2025, including quantitative research teams, while recruiting senior researchers for Gemini. The hiring count may also include contractors, since the data source does not say how it counts them."
-     },
-     {
-      "head": "Pay drops outside software and by setting",
-      "text": "In-house roles at software and internet firms had a median midpoint of $188,250, against $152,500 at banks, insurers, retailers and health companies and $116,825 at agencies and staffing firms. Contracts were 16.6% of the sample and hourly work had a median of $58. Fully remote postings paid $144,000 against $176,000 for hybrid."
-     },
-     {
-      "head": "Experts are paid to train AI on junior work",
-      "text": "Mercor posts hourly part-time work for people with 5+ years of research experience to grade AI-generated research documents and decks. This is the work junior researchers used to learn on. With nearly no junior hiring, the author warns there will be few mid-level researchers in five years and fewer seniors after that."
-     }
-    ],
-    "takeaway": "Build skills in SQL or Python, experiment design and AI evals, since those are what the best-paid postings ask for. If you lead a team, consider hiring one junior researcher this year, because the senior talent of the future has to start somewhere."
-   },
-   "importance": 4,
-   "practical": 3,
-   "roles": [
-    "researcher",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "19-four-qualitative-ux-research-methods-com",
-   "title": "Four qualitative UX research methods compared",
-   "url": "https://www.nngroup.com/articles/qual-research-methods/",
-   "source": "NN/g",
-   "published": "2026-11-20",
-   "topics": [
-    "research"
-   ],
-   "kind": "try",
-   "gist": "NN/g overviews usability testing, user interviews, field studies and diary studies, with rough relative cost and difficulty estimates for each.",
-   "summary": [
-    "Covers usability testing, interviews, field studies and diary studies.",
-    "Companion to the quantitative methods overview.",
-    "Cost and difficulty estimates are rough and relative."
-   ],
-   "why": {
-    "research": "It helps researchers and PMs pick the right method for questions about why users struggle.",
-    "general": "A quick reference for choosing a method before planning a study."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "researcher",
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "20-google-tests-sticky-citations-in-ai-over",
-   "title": "Google tests sticky citations in AI Overviews",
-   "url": "https://searchenginewatch.com/google-tests-sticky-citations-in-desktop-ai-overviews/",
-   "source": "Search Engine Watch via TLDR Design",
-   "published": "2026-11-19",
-   "topics": [
-    "trust",
-    "ai-interaction"
-   ],
-   "kind": "know",
-   "gist": "Google is testing a desktop AI Overview that keeps source citations visible as users scroll through generated answers.",
-   "summary": [
-    "Citations move with the content instead of scrolling offscreen.",
-    "A horizontal divider separates the overview from regular results.",
-    "The design has been spotted across multiple browsers."
-   ],
-   "why": {
-    "trust": "Keeping sources visible is a clear pattern for making AI answers easier to verify.",
-    "general": "It signals how search is changing the way sources get seen and clicked."
-   },
-   "importance": 3,
-   "practical": 3,
-   "roles": [
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "21-chrome-tests-a-decisions-api-for-interfa",
-   "title": "Chrome tests a Decisions API for interfaces that understand intent",
-   "url": "https://agustinbarrientos.com/writing/senior-eye/interfaces-that-understand-what-we-want",
-   "source": "Agustin Barrientos via TLDR Design",
-   "published": "2026-11-17",
-   "topics": [
-    "ai-interaction",
-    "ai-travel-commerce"
-   ],
-   "kind": "know",
-   "gist": "Chrome is experimenting with an on device Decisions API that picks from options a site defines, such as turning a hotel request into filters.",
-   "summary": [
-    "The model runs on the user's own computer, free and private.",
-    "A typed request becomes filters like Beachfront and Pet friendly.",
-    "It is behind a Chrome flag and can pair with a cloud fallback."
-   ],
-   "why": {
-    "ai-interaction": "It points to interfaces that translate natural language into existing controls instead of replacing them.",
-    "general": "Private on device decisions could change how search and filter patterns are built."
-   },
-   "importance": 3,
-   "practical": 3,
-   "roles": [
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "22-sabre-wants-to-be-the-transaction-engine",
-   "title": "Sabre wants to be the transaction engine behind AI travel bookings",
-   "url": "https://skift.com/2026/11/19/sabre-wants-to-be-the-transaction-engine-behind-ai-travel-bookings/",
-   "source": "Skift",
-   "published": "2026-11-19",
-   "topics": [
-    "ai-travel-commerce",
-    "industry"
-   ],
-   "kind": "know",
-   "gist": "Skift reports Sabre wants to handle transactions behind AI platforms that could become a new front door for travel bookings.",
-   "summary": [
-    "AI platforms may become a new front door for bookings.",
-    "Sabre aims to run the transactions behind them.",
-    "Someone else may control the customer relationship."
-   ],
-   "why": {
-    "ai-travel-commerce": "It shows where travel infrastructure players see their role as AI assistants take over discovery.",
-    "general": "Owning the customer relationship becomes harder when an agent sits in front."
-   },
-   "importance": 3,
-   "practical": 2,
-   "roles": [
-    "pm",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "23-personal-agent-protocol-1-0-from-sierra",
-   "title": "Personal Agent Protocol 1.0 from Sierra",
-   "url": "https://sierra.ai/blog/releasing-poppy",
-   "source": "Sierra via TLDR AI",
-   "published": "2026-11-16",
-   "topics": [
-    "ai-interaction",
-    "ai-travel-commerce"
-   ],
-   "kind": "know",
-   "gist": "Sierra released a protocol defining how personal agents connect with companies through business agents, websites and APIs, with customers controlling access.",
-   "summary": [
-    "Personal agents interact with companies that implement the protocol.",
-    "Customers control what agents can and cannot do.",
-    "Access can be managed over time."
-   ],
-   "why": {
-    "ai-interaction": "Standards for agent to company interaction shape what customer service and commerce flows must support.",
-    "general": "Companies may soon need to serve customers' agents as well as customers."
-   },
-   "importance": 3,
-   "practical": 2,
-   "roles": [
-    "pm",
-    "designer"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "24-users-rubber-stamp-ai-permission-request",
-   "title": "Users rubber stamp AI permission requests",
-   "url": "https://www.uxtigers.com/post/ux-roundup-20261120",
-   "source": "Jakob Nielsen",
-   "published": "2026-11-20",
-   "topics": [
-    "trust",
-    "ai-interaction"
-   ],
-   "kind": "know",
-   "gist": "Nielsen's roundup says users approve AI permission requests without thinking and recommends asking for permissions in context, one at a time.",
-   "summary": [
-    "Users rubber stamp AI permission requests.",
-    "Ask for permission in context.",
-    "Ask one at a time rather than in a barrage."
-   ],
-   "why": {
-    "trust": "Permission prompts only protect users if they are timed and scoped so people actually read them.",
-    "general": "It also covers GPT-6.2 Astra at agentic video production and using AI to prepare for human conversations."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "designer",
-    "pm"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "25-design-writing-with-ai-agents-at-automat",
-   "title": "Design writing with AI agents at Automattic",
-   "url": "https://automattic.design/2026/11/16/design-writing-working-with-ai-agents/",
-   "source": "Automattic Design via TLDR Design",
-   "published": "2026-11-17",
-   "topics": [
-    "ai-quality",
-    "craft"
-   ],
-   "kind": "try",
-   "gist": "Automattic built two installable agent skills for interface copy and voiceover scripts, combining writing guidance, automated linting and human review.",
-   "summary": [
-    "AI copy often has recognizable vocabulary and generic phrasing.",
-    "The skills make agents ask clarifying questions instead of assuming.",
-    "Linting and human review keep editorial judgment in place."
-   ],
-   "why": {
-    "ai-quality": "Encoding writing standards as skills and lint checks is a repeatable way to improve AI output.",
-    "general": "Teams can copy the approach to keep brand voice consistent in AI drafted copy."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "designer"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "26-native-is-a-floor-not-a-ceiling",
-   "title": "Native is a floor, not a ceiling",
-   "url": "https://uxdesign.cc/native-is-a-floor-not-a-ceiling-09bc4f27ddce",
-   "source": "UX Collective",
-   "published": "2026-11-17",
-   "topics": [
-    "craft",
-    "ai-prototyping"
-   ],
-   "kind": "know",
-   "gist": "AI mockups copy how iOS looks, often the pre iOS 26 design, while native components bring behavior images cannot, leaving brand to shape the ceiling.",
-   "summary": [
-    "Native gives back gestures, scalable text and built in accessibility.",
-    "Apps pick up updates like Liquid Glass when they recompile.",
-    "Typography, illustration and tone are where brand adds value."
-   ],
-   "why": {
-    "craft": "It clarifies which parts of a mobile interface to take from the platform and which to own.",
-    "general": "A caution that polished AI mockups can hide missing platform behavior."
-   },
-   "detail": {
-    "points": [
-     {
-      "head": "AI mockups copy the look of iOS, not its behavior",
-      "text": "AI-generated mockups now give anyone a polished look, but they copy the picture of iOS rather than how it works. They often still draw the design from before iOS 26. Designers using them end up with screens that look native but do not act native."
-     },
-     {
-      "head": "Native components bring what images cannot",
-      "text": "Real native components provide back gestures, scalable text, built-in accessibility, and automatic updates. Liquid Glass is one example: it arrives automatically when apps are recompiled. A picture of a control cannot offer any of these behaviors."
-     },
-     {
-      "head": "Native sets the floor, brand sets the ceiling",
-      "text": "The author splits responsibility in two. Native conventions should govern navigation, sheets, and controls, since users already know how those work. The ceiling, meaning typography, illustration, and tone, is where the brand should differentiate itself."
-     }
-    ],
-    "takeaway": "Build your AI-generated prototypes on real native components rather than static images so gestures, text scaling, and accessibility come for free. Reserve your design effort for typography, illustration, and tone, which is where the brand can stand out."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "designer"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "27-open-source-toolkit-helps-teams-catch-ac",
-   "title": "Open source toolkit helps teams catch accessibility barriers earlier",
-   "url": "https://www.aaron-gustafson.com/notebook/build-faster-without-leaving-accessibility-behind/",
-   "source": "Aaron Gustafson via TLDR Design",
-   "published": "2026-11-16",
-   "topics": [
-    "accessibility",
-    "ai-quality"
-   ],
-   "kind": "try",
-   "gist": "The open sourced Accessibility Considerations Toolkit pairs access strategies and assistive technologies with heuristics and standards, in formats for people and for agents.",
-   "summary": [
-    "Aims to find barriers before AI assisted development repeats mistakes faster.",
-    "Markdown for people and YAML for agents and pipelines.",
-    "It does not replace testing with disabled people or prove compliance."
-   ],
-   "why": {
-    "accessibility": "It gives agents and teams a shared reference to apply while building.",
-    "general": "A reminder that human testing still has to back up any automated guidance."
-   },
-   "importance": 3,
-   "practical": 4,
-   "roles": [
-    "designer",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "28-accessibility-and-the-eu-ai-act",
-   "title": "Accessibility and the EU AI Act",
-   "url": "https://tetralogical.com/blog/2026/11/11/accessibility-and-the-eu-ai-act/",
-   "source": "TetraLogical via TLDR Design",
-   "published": "2026-11-18",
-   "topics": [
-    "accessibility",
-    "trust"
-   ],
-   "kind": "know",
-   "gist": "The EU AI Act is already in force and overlaps with accessibility law, including duties to tell people accessibly when they deal with AI.",
-   "summary": [
-    "Obligations phase in through 2028.",
-    "Annex III high risk AI must meet accessibility requirements from December 2027.",
-    "People must be told, accessibly, when they interact with AI."
-   ],
-   "why": {
-    "accessibility": "Accessibility becomes a compliance requirement for certain AI products on a known timeline.",
-    "general": "Disclosure of AI interaction is now a design requirement as well as an ethical one."
-   },
-   "importance": 3,
-   "practical": 3,
-   "roles": [
-    "lead",
-    "pm",
-    "designer"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "29-what-is-a-researcher-s-worth",
-   "title": "What is a researcher's worth",
-   "url": "https://uxdesign.cc/what-is-a-researchers-worth-ea14c95c6d12",
-   "source": "UX Collective",
-   "published": "2026-11-17",
-   "topics": [
-    "research",
-    "leadership"
-   ],
-   "kind": "know",
-   "gist": "The essay argues the debate over research value is not a technology story and that effortless AI makes human friction the scarcest asset.",
-   "summary": [
-    "Researchers keep facing doubts about whether findings are real.",
-    "Funding for academic researchers has also been cut.",
-    "Human friction becomes more scarce as AI makes things effortless."
-   ],
-   "why": {
-    "research": "It offers a way to frame research value as AI tools change expectations.",
-    "general": "Useful context for leaders defending research investment."
-   },
-   "importance": 2,
-   "practical": 2,
-   "roles": [
-    "researcher",
-    "lead"
-   ],
-   "mentions": 1
-  },
-  {
-   "id": "30-a-survivor-s-guide-to-ai-design-slop",
-   "title": "A survivor's guide to AI design slop",
-   "url": "https://uxdesign.cc/the-attack-of-the-giant-ai-design-slop-monster-a-survivors-guide-55f5918f78f4",
+   "id": "10-lessons-from-3d-scanning-a-unesco-cathed",
+   "title": "Lessons from 3D scanning a UNESCO cathedral",
+   "url": "https://uxdesign.cc/lessons-from-3d-scanning-st-johns-co-cathedral-700911d61cfe?source=rss----138adf9c44c---4",
    "source": "UX Collective",
    "published": "2026-11-22",
    "topics": [
-    "ai-prototyping",
     "industry"
    ],
    "kind": "know",
-   "gist": "A designer expands a conference talk on how AI has changed UX design in unpredictable and worrying ways during 2026.",
+   "gist": "A team digitised St John's Co-Cathedral and found where photogrammetry works and where it struggles.",
    "summary": [
-    "Expands a talk given at a City St George's HCI conference.",
-    "Compares to the author's more optimistic writing from last year.",
-    "Text is human written, with some AI generated images labeled as such."
+    "Used 99,000 photographs and 43 laser scans",
+    "Compared photogrammetry with Gaussian splatting",
+    "Shows limits of capture for gold, marble and fabric"
    ],
    "why": {
-    "ai-prototyping": "It captures a practitioner's shifting view on AI generated design output.",
-    "general": "A reflective read on how the mood around AI in UX has changed."
+    "industry": "Useful context on capture technology limits, though a niche topic for most product teams.",
+    "general": "A detailed case study on digital capture."
+   },
+   "detail": {
+    "points": [
+     {
+      "head": "Seven nights of evening-only capture",
+      "text": "The team digitised St John's Co-Cathedral in Valletta, a UNESCO site with two Caravaggio paintings, during seven evening sessions from 7 pm, because the building is open to about 3,000 visitors a day and holds daily Mass. The capture used 99,000 photographs from Canon R5 DSLRs, a DJI Mavic 3 Pro drone flown manually at 3 to 15 metres, and 43 Faro Focus M70 LiDAR scans. Processing took about three months and 2.18 TB of data."
+     },
+     {
+      "head": "Adapted capture method for a confined space",
+      "text": "Classic photogrammetry needs circling an object from all sides, which the nave and chapels do not allow. The team shot wide first, then moved closer, and shot each chapel from outside its entrance to keep alignment with the nave. Sharp focus was prioritised over clean ISO because missing detail cannot be rebuilt later, while grain can be removed in post-processing."
+     },
+     {
+      "head": "Shiny gold and dark marble break the method",
+      "text": "Photogrammetry assumes a surface looks the same from every angle, which gilding, bronze and dark polished marble violate because their highlights move with the camera. The team flattened the contrast of images shot at high ISO, which added heavy grain, then denoised them with Adobe's AI tool. Denoising the 99,000 images took about a month, and the tool struggled with batches over 2,000 photos."
+     },
+     {
+      "head": "Manual work where software failed",
+      "text": "The software could not tell a 400-year-old column from chairs or a scaffolding pole, so all 43 LiDAR scans were cleaned by hand. Denoising had also smoothed away detail the aligner needed, so 108 control points were placed manually. This produced 98.6% of images in one aligned component, with 91,721 of 93,066 images registered and a mean reprojection error of 0.26 pixels."
+     },
+     {
+      "head": "Tapestries and the Zondadari monument remained weak",
+      "text": "The 29 Flemish tapestries, up to about 6 by 6 metres, moved with air currents in the nave, which blurred faces in the first model. The fix was photographing them flat during conservation and reprojecting onto smoothed meshes. The dark, reflective, curved marble of the Zondadari monument still shows artefacts, so the team applied artificial lighting to it and plans to handle such monuments individually in future scans."
+     },
+     {
+      "head": "Scale, accuracy and use of the archive",
+      "text": "Each chapel was reconstructed separately and combined, with the altar split into nine overlapping pieces, giving roughly one billion triangles per room and 25 to 30 billion overall. LiDAR mean point error was 1.3 mm across all scans and 0.9 mm across the 28 core nave scans. The archive is intended for disaster recovery, as the Notre-Dame example shows, for conservation planning, virtual tourism and scholarly research. Gaussian splatting kept gilded reflections in one chapel but dissolved at close range, so it serves as a companion to the mesh rather than a replacement."
+     },
+     {
+      "head": "Known limits of the model",
+      "text": "The model records geometry and colour at one moment, not material properties such as hardness, and movable items were removed or moved during processing, so it does not show the building in use. Periodic rescanning would be needed to track conservation change. The public cannot access the model yet, but the Foundation and team are working on a next phase."
+     }
+    ],
+    "takeaway": "Treat reflective and fabric surfaces as known failure modes: plan controlled lighting, flat or matte capture conditions, and manual fallbacks for alignment and cleanup. Expect that a 3D model shows geometry and appearance at one point in time, so design any interface around the user's need, such as conservation tracking or virtual visits, rather than assuming it captures how a space behaves."
    },
    "importance": 2,
    "practical": 2,
    "roles": [
-    "designer",
-    "lead"
+    "researcher"
+   ],
+   "mentions": 1
+  },
+  {
+   "id": "11-seven-things-ai-killed-while-measuring-p",
+   "title": "Seven things AI killed while measuring productivity",
+   "url": "https://uxdesign.cc/seven-things-ai-killed-while-you-were-measuring-productivity-b4499232ac3d?source=rss----138adf9c44c---4",
+   "source": "UX Collective",
+   "published": "2026-11-22",
+   "topics": [
+    "leadership",
+    "growth"
+   ],
+   "kind": "know",
+   "gist": "An essay argues that most executives see no AI impact because they measure the wrong things.",
+   "summary": [
+    "Reports that 80% of executives see no AI impact",
+    "Argues leaders are looking in the wrong place",
+    "Lists things AI has quietly removed from work"
+   ],
+   "why": {
+    "leadership": "Challenges how leaders measure the value of AI investments.",
+    "general": "Prompts a rethink of productivity metrics."
+   },
+   "importance": 3,
+   "practical": 2,
+   "roles": [
+    "lead",
+    "pm"
    ],
    "mentions": 1
   }
