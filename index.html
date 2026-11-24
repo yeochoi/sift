@@ -330,7 +330,7 @@ async function viewItem(weekId, itemId) {
     : `<section class="section"><h2 class="small">In short</h2><ul class="points body">${it.summary.map((x) => `<li>${esc(x)}</li>`).join('')}</ul></section>`
   app.innerHTML = `<div class="screen flow">
     <a class="round" href="${back}" aria-label="Back">${ICON.back}</a>
-    <div class="meta" style="margin-top:28px"><span class="small">${esc(p.label)} · <a class="srclink" href="${esc(it.url)}" target="_blank" rel="noopener" data-open>${esc(it.source)}${ICON.ext}<span class="sr">, opens the original</span></a></span>${tag(it.kind)}</div>
+    <div class="meta" style="margin-top:28px"><span class="small">${esc(p.label)} · <a class="srclink" href="${esc(it.url)}" target="_blank" rel="noopener">${esc(it.source)}${ICON.ext}<span class="sr">, opens the original</span></a></span>${tag(it.kind)}</div>
     <h1 class="title" style="margin-top:10px">${esc(it.title)}</h1>
     ${it.mentions > 1 ? `<p class="sub small">Covered by ${it.mentions} sources this week</p>` : ''}
     ${it.gist ? `<p class="gistline body">${esc(it.gist)}</p>` : ''}
@@ -340,9 +340,8 @@ async function viewItem(weekId, itemId) {
     ${it.detail?.takeaway ? `<div class="hair"></div><section class="section"><h2 class="small blue">What you can do</h2><p class="body">${esc(it.detail.takeaway)}</p></section>` : ''}
     <div class="grow" style="min-height:40px"></div>
     <button type="button" class="btn ${read ? 'secondary' : 'primary'} button" id="mark">${read ? 'Mark as unread' : 'Done reading'}</button>
-    <a class="orig lead" href="${esc(it.url)}" target="_blank" rel="noopener" data-open>Read the original on ${esc(it.source)}${ICON.ext}</a>
+    <a class="orig lead" href="${esc(it.url)}" target="_blank" rel="noopener">Read the original on ${esc(it.source)}${ICON.ext}</a>
   </div>`
-  app.querySelectorAll('[data-open]').forEach((a) => a.addEventListener('click', () => setRead(pool.week, it.id, true)))
   document.getElementById('mark').addEventListener('click', () => { setRead(pool.week, it.id, !read); location.hash = back })
 }
 
